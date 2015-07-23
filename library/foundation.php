@@ -8,8 +8,8 @@
  */
 
 // Pagination.
-if ( ! function_exists( 'foundationpress_pagination' ) ) :
-function foundationpress_pagination() {
+if ( ! function_exists( '_100foldstudio_pagination' ) ) :
+function _100foldstudio_pagination() {
 	global $wp_query;
 
 	$big = 999999999; // This needs to be an unlikely integer
@@ -22,8 +22,8 @@ function foundationpress_pagination() {
 		'total' => $wp_query->max_num_pages,
 		'mid_size' => 5,
 		'prev_next' => true,
-	    'prev_text' => __( '&laquo;', 'foundationpress' ),
-	    'next_text' => __( '&raquo;', 'foundationpress' ),
+	    'prev_text' => __( '&laquo;', '100foldstudio' ),
+	    'next_text' => __( '&raquo;', '100foldstudio' ),
 		'type' => 'list',
 	) );
 
@@ -47,15 +47,15 @@ endif;
  * A fallback when no navigation is selected by default.
  */
 
-if ( ! function_exists( 'foundationpress_menu_fallback' ) ) :
-function foundationpress_menu_fallback() {
+if ( ! function_exists( '_100foldstudio_menu_fallback' ) ) :
+function _100foldstudio_menu_fallback() {
 	echo '<div class="alert-box secondary">';
 	// Translators 1: Link to Menus, 2: Link to Customize.
-		printf( __( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'foundationpress' ),
-			sprintf(  __( '<a href="%s">Menus</a>', 'foundationpress' ),
+		printf( __( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', '100foldstudio' ),
+			sprintf(  __( '<a href="%s">Menus</a>', '100foldstudio' ),
 				get_admin_url( get_current_blog_id(), 'nav-menus.php' )
 			),
-			sprintf(  __( '<a href="%s">Customize</a>', 'foundationpress' ),
+			sprintf(  __( '<a href="%s">Customize</a>', '100foldstudio' ),
 				get_admin_url( get_current_blog_id(), 'customize.php' )
 			)
 		);
@@ -64,22 +64,22 @@ function foundationpress_menu_fallback() {
 endif;
 
 // Add Foundation 'active' class for the current menu item.
-if ( ! function_exists( 'foundationpress_active_nav_class' ) ) :
-function foundationpress_active_nav_class( $classes, $item ) {
+if ( ! function_exists( '_100foldstudio_active_nav_class' ) ) :
+function _100foldstudio_active_nav_class( $classes, $item ) {
 	if ( 1 == $item->current || true == $item->current_item_ancestor ) {
 		$classes[] = 'active';
 	}
 	return $classes;
 }
-add_filter( 'nav_menu_css_class', 'foundationpress_active_nav_class', 10, 2 );
+add_filter( 'nav_menu_css_class', '_100foldstudio_active_nav_class', 10, 2 );
 endif;
 
 /**
  * Use the active class of ZURB Foundation on wp_list_pages output.
  * From required+ Foundation http://themes.required.ch.
  */
-if ( ! function_exists( 'foundationpress_active_list_pages_class' ) ) :
-function foundationpress_active_list_pages_class( $input ) {
+if ( ! function_exists( '_100foldstudio_active_list_pages_class' ) ) :
+function _100foldstudio_active_list_pages_class( $input ) {
 
 	$pattern = '/current_page_item/';
 	$replace = 'current_page_item active';
@@ -88,11 +88,11 @@ function foundationpress_active_list_pages_class( $input ) {
 
 	return $output;
 }
-add_filter( 'wp_list_pages', 'foundationpress_active_list_pages_class', 10, 2 );
+add_filter( 'wp_list_pages', '_100foldstudio_active_list_pages_class', 10, 2 );
 endif;
 
-if ( ! class_exists( 'Foundationpress_Comments' ) ) :
-class Foundationpress_Comments extends Walker_Comment{
+if ( ! class_exists( '_100foldstudio_Comments' ) ) :
+class _100foldstudio_Comments extends Walker_Comment{
 
 	// Init classwide variables.
 	var $tree_type = 'comment';
@@ -103,7 +103,7 @@ class Foundationpress_Comments extends Walker_Comment{
 	 * start_lvl() only goes as high as 1 deep nested comments */
 	function __construct() { ?>
          
-        <h3><?php comments_number( __( 'No Responses to', 'foundationpress' ), __( 'One Response to', 'foundationpress' ), __( '% Responses to', 'foundationpress' ) ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
+        <h3><?php comments_number( __( 'No Responses to', '100foldstudio' ), __( 'One Response to', '100foldstudio' ), __( '% Responses to', '100foldstudio' ) ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
         <ol class="comment-list">
          
     <?php }
@@ -143,8 +143,8 @@ class Foundationpress_Comments extends Walker_Comment{
 			
 			<div class="author-meta vcard author">  
 			
-			<?php printf( __( '<cite class="fn">%s</cite>', 'foundationpress' ), get_comment_author_link() ) ?>
-			<time datetime="<?php echo comment_date( 'c' ) ?>"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf( __( '%1$s', 'foundationpress' ), get_comment_date(),  get_comment_time() ) ?></a></time>
+			<?php printf( __( '<cite class="fn">%s</cite>', '100foldstudio' ), get_comment_author_link() ) ?>
+			<time datetime="<?php echo comment_date( 'c' ) ?>"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf( __( '%1$s', '100foldstudio' ), get_comment_date(),  get_comment_time() ) ?></a></time>
 			
 			</div><!-- /.comment-author -->
 			

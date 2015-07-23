@@ -7,8 +7,8 @@
  * @since FoundationPress 1.0
  */
 
-if ( ! class_exists( 'Foundationpress_Offcanvas_Walker' ) ) :
-class Foundationpress_Offcanvas_Walker extends Walker_Nav_Menu {
+if ( ! class_exists( '_100foldstudio_Offcanvas_Walker' ) ) :
+class _100foldstudio_Offcanvas_Walker extends Walker_Nav_Menu {
 
 	function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
 		$element->has_children = ! empty( $children_elements[ $element->ID ] );
@@ -32,7 +32,7 @@ class Foundationpress_Offcanvas_Walker extends Walker_Nav_Menu {
 	}
 
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$output .= "\n<ul class=\"left-submenu\">\n<li class=\"back\"><a href=\"#\">". __( 'Back', 'foundationpress' ) ."</a></li>\n";
+		$output .= "\n<ul class=\"left-submenu\">\n<li class=\"back\"><a href=\"#\">". __( 'Back', '100foldstudio' ) ."</a></li>\n";
 	}
 
 }

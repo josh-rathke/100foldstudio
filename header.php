@@ -25,12 +25,12 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
-	<?php do_action( 'foundationpress_after_body' ); ?>
+	<?php do_action( '_100foldstudio_after_body' ); ?>
 	
 	<div class="off-canvas-wrap" data-offcanvas>
 	<div class="inner-wrap">
 	
-	<?php do_action( 'foundationpress_layout_start' ); ?>
+	<?php do_action( '_100foldstudio_layout_start' ); ?>
 	
 	<nav class="tab-bar">
 		<section class="left-small">
@@ -50,4 +50,4 @@
 	<?php get_template_part( 'parts/top-bar' ); ?>
 
 <section class="container" role="document">
-	<?php do_action( 'foundationpress_after_header' ); ?>
+	<?php do_action( '_100foldstudio_after_header' ); ?>

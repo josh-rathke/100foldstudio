@@ -21,7 +21,7 @@ get_header(); ?>
 
 	<?php if ( have_posts() ) : ?>
 
-		<?php do_action( 'foundationpress_before_content' ); ?>
+		<?php do_action( '_100foldstudio_before_content' ); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'content', get_post_format() ); ?>
@@ -30,20 +30,20 @@ get_header(); ?>
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 
-		<?php do_action( 'foundationpress_before_pagination' ); ?>
+		<?php do_action( '_100foldstudio_before_pagination' ); ?>
 
 	<?php endif;?>
 
 
 
-	<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
+	<?php if ( function_exists( '_100foldstudio_pagination' ) ) { _100foldstudio_pagination(); } else if ( is_paged() ) { ?>
 		<nav id="post-nav">
-			<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-			<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
+			<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', '100foldstudio' ) ); ?></div>
+			<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', '100foldstudio' ) ); ?></div>
 		</nav>
 	<?php } ?>
 
-	<?php do_action( 'foundationpress_after_content' ); ?>
+	<?php do_action( '_100foldstudio_after_content' ); ?>
 
 	</div>
 	<?php get_sidebar(); ?>
