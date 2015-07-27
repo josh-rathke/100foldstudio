@@ -26,6 +26,41 @@
 	</head>
 	<body <?php body_class(); ?>>
 	<?php do_action( '_100foldstudio_after_body' ); ?>
+        
+        <ul class="main-menu">
+            <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/100FoldLogo-white.png" />
+            <li>About</li>
+            <li>Projects</li>
+            <li>Blog</li>
+            <li>Donate</li>
+            <li class="right">Search</li>
+            <li class="right">Contact</li>
+        </ul>
+        
+        <div class="hero-header clearfix">
+            
+            <div id="heroHeader" class="hero-description">
+                <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/100FoldLogo-white.png" />
+                <p>Providing innovative and affordable design services for local and global missions.</p>
+                <a href="#_" class="hero-primary-link">Learn More</a>
+                <a href="#_" class="hero-secondary-link">Projects</a>
+            </div>
+            
+            <canvas height="100%" id="demo-canvas"></canvas>
+            
+            <script src="<?php echo get_bloginfo('template_url'); ?>/js/TweenLite.min.js"></script>
+            <script src="<?php echo get_bloginfo('template_url'); ?>/js/EasePack.min.js"></script>
+            <script src="<?php echo get_bloginfo('template_url'); ?>/js/rAF.js"></script>
+            <script src="<?php echo get_bloginfo('template_url'); ?>/js/demo-1.js"></script>
+            
+            <div class="full-screen-video">
+                <video autoplay loop muted>
+                  <source src="<?php echo get_bloginfo('template_url') ?>/assets/video/soccer.mp4" type="video/mp4">
+                  <source src="<?php echo get_bloginfo('template_url') ?>/assets/video/soccer.webm" type="video/webm">
+                Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
 	
 	<div class="off-canvas-wrap" data-offcanvas>
 	<div class="inner-wrap">
