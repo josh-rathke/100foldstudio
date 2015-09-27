@@ -27,16 +27,6 @@
 	<body <?php body_class(); ?>>
 	<?php do_action( '_100foldstudio_after_body' ); ?>
         
-        <ul class="main-menu">
-            <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/100FoldLogo-white.png" />
-            <li>About</li>
-            <li>Projects</li>
-            <li>Blog</li>
-            <li>Donate</li>
-            <li class="right">Search</li>
-            <li class="right">Contact</li>
-        </ul>
-        
         <div class="hero-header clearfix">
             
             <div id="heroHeader" class="hero-description">
@@ -45,13 +35,6 @@
                 <a href="#_" class="hero-primary-link">Learn More</a>
                 <a href="#_" class="hero-secondary-link">Projects</a>
             </div>
-            
-            <canvas height="100%" id="demo-canvas"></canvas>
-            
-            <script src="<?php echo get_bloginfo('template_url'); ?>/js/TweenLite.min.js"></script>
-            <script src="<?php echo get_bloginfo('template_url'); ?>/js/EasePack.min.js"></script>
-            <script src="<?php echo get_bloginfo('template_url'); ?>/js/rAF.js"></script>
-            <script src="<?php echo get_bloginfo('template_url'); ?>/js/demo-1.js"></script>
             
             <div class="full-screen-video">
                 <video autoplay loop muted>
@@ -66,23 +49,10 @@
 	<div class="inner-wrap">
 	
 	<?php do_action( '_100foldstudio_layout_start' ); ?>
-	
-	<nav class="tab-bar">
-		<section class="left-small">
-			<a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
-		</section>
-		<section class="middle tab-bar-section">
-			
-			<h1 class="title">
-				<?php bloginfo( 'name' ); ?>
-			</h1>
-
-		</section>
-	</nav>
 
 	<?php get_template_part( 'parts/off-canvas-menu' ); ?>
-
-	<?php get_template_part( 'parts/top-bar' ); ?>
+        
+    <?php get_template_part( 'parts/top-bar' ); ?>
 
 <section class="container" role="document">
 	<?php do_action( '_100foldstudio_after_header' ); ?>

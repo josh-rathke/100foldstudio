@@ -9,8 +9,7 @@
  */
 
 register_nav_menus(array(
-	'top-bar-l' => 'Left Top Bar', // Registers the menu in the WordPress admin menu editor.
-	'top-bar-r' => 'Right Top Bar',
+	'top-bar' => 'Top Bar', // Registers the menu in the WordPress admin menu editor.
 	'mobile-off-canvas' => 'Mobile',
 ));
 
@@ -19,14 +18,14 @@ register_nav_menus(array(
  * Left top bar
  * http://codex.wordpress.org/Function_Reference/wp_nav_menu
  */
-if ( ! function_exists( '_100foldstudio_top_bar_l' ) ) {
-	function _100foldstudio_top_bar_l() {
+if ( ! function_exists( '_100foldstudio_top_bar' ) ) {
+	function _100foldstudio_top_bar() {
 	    wp_nav_menu(array(
 	        'container' => false,                           // Remove nav container
 	        'container_class' => '',                        // Class of container
 	        'menu' => '',                                   // Menu name
-	        'menu_class' => 'top-bar-menu left',            // Adding custom nav class
-	        'theme_location' => 'top-bar-l',                // Where it's located in the theme
+	        'menu_class' => 'top-bar-menu',                 // Adding custom nav class
+	        'theme_location' => 'top-bar',                  // Where it's located in the theme
 	        'before' => '',                                 // Before each link <a>
 	        'after' => '',                                  // After each link </a>
 	        'link_before' => '',                            // Before each link text
@@ -38,27 +37,18 @@ if ( ! function_exists( '_100foldstudio_top_bar_l' ) ) {
 	}
 }
 
+
 /**
- * Right top bar
+ *  Add Logo to Top Bar
  */
-if ( ! function_exists( '_100foldstudio_top_bar_r' ) ) {
-	function _100foldstudio_top_bar_r() {
-	    wp_nav_menu(array(
-	        'container' => false,                           // Remove nav container
-	        'container_class' => '',                        // Class of container
-	        'menu' => '',                                   // Menu name
-	        'menu_class' => 'top-bar-menu right',           // Adding custom nav class
-	        'theme_location' => 'top-bar-r',                // Where it's located in the theme
-	        'before' => '',                                 // Before each link <a>
-	        'after' => '',                                  // After each link </a>
-	        'link_before' => '',                            // Before each link text
-	        'link_after' => '',                             // After each link text
-	        'depth' => 5,                                   // Limit the depth of the nav
-	        'fallback_cb' => false,                         // Fallback function (see below)
-	        'walker' => new _100foldstudio_Top_Bar_Walker(),
-	    ));
-	}
+add_filter('wp_nav_menu_items','add_new_menu_item', 10, 2);
+function add_new_menu_item( $nav, $args ) {
+    if( $args->theme_location == 'top-bar' )
+    $newmenuitem = '<img src="' . get_bloginfo("template_url") . '/assets/img/100FoldLogo-white.png" />';
+    $nav = $newmenuitem.$nav;
+    return $nav;
 }
+
 
 /**
  * Mobile off-canvas

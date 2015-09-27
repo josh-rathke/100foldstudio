@@ -9,6 +9,12 @@ body {
 	text-rendering: optimizeLegibility;
 }
 
+h2 {
+    color: $primary_color;
+    font-family:"Century Gothic W01";
+    margin: 26px 0px 6px 0px;
+}
+
 // Reset margin and padding on figure element
 figure { 
 	margin: 0; 
@@ -50,4 +56,9 @@ img.alignleft {
 blockquote.alignright,
 img.alignright {
 	margin: rem-calc(7) 0 rem-calc(7) rem-calc(24);
+}
+
+.button-alt {
+    border: 1px solid $primary_color;
+    padding: 10px 16px;
 }

@@ -12,10 +12,22 @@
 ?>
 
 </section>
-<footer class="row">
-	<?php do_action( '_100foldstudio_before_footer' ); ?>
-	<?php dynamic_sidebar( 'footer-widgets' ); ?>
-	<?php do_action( '_100foldstudio_after_footer' ); ?>
+<footer class="footer">
+    <div class="row">
+	   <?php do_action( '_100foldstudio_before_footer' ); ?>
+	   
+        <div class="columns medium-4">
+            Latest News
+        </div>
+        <div class="columns medium-4">
+            Connect
+        </div>
+        <div class="columns medium-4">
+            Join Us
+        </div>
+        
+	   <?php do_action( '_100foldstudio_after_footer' ); ?>
+    </div>
 </footer>
 <a class="exit-off-canvas"></a>
 

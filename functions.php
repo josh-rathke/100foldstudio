@@ -45,4 +45,65 @@ require_once( 'library/theme-support.php' );
 /** Add Header image */
 require_once( 'library/custom-header.php' );
 
+
+
+
+/** Add TGM Plugin Activation Class **/
+require_once( 'library/tgm-plugin-activation/class-tgm-plugin-activation.php' );
+require_once( 'library/tgm-plugin-activation/tgm-plugin-activation-config.php' );
+
+
+
+
+
+
+if ( ! class_exists( 'Redux' ) ) {
+    return;
+}
+
+$opt_name = "100 Fold Studio";
+
+$args = array(
+    'opt_name'    => $opt_name,
+    'dev_mode'    => false,
+);
+ 
+Redux::setArgs ($opt_name, $args);
+
+$tabs = array(
+    array(
+        'id'      => 'redux-help-tab-1',
+        'title'   => 'Theme Information 1',
+        'content' => '<br />This is the tab content, HTML is allowed.<br />'
+    ),
+    array(
+        'id'      => 'redux-help-tab-2',
+        'title'   => 'Theme Information 2',
+        'content' => '<br />This is the tab content, HTML is allowed.<br />'
+    )
+);
+Redux::setHelpTab( $opt_name, $tabs );
+
+$content = '<br />This is the sidebar content, HTML is allowed.<br />';
+Redux::setHelpSidebar( $opt_name, $content );
+ 
+// The first subsection
+$section = array(
+    'title'      => 'Front Page',
+    'id'         => 'front-page',
+    'desc'       => '',
+    'icon'       => 'el el-home',
+    'fields'     => array(
+        array(
+            'id'       => 'opt-text-subsection-example',
+            'type'     => 'text',
+            'title'    => 'Text Field',
+            'subtitle' => 'Subtitle',
+            'desc'     => 'Field Description',
+            'default'  => 'Default Text',
+        ),        
+    )
+);
+Redux::setSection($opt_name, $section);
+
 ?>

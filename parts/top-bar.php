@@ -16,8 +16,7 @@
             </li>
         </ul>
         <section class="top-bar-section">
-            <?php _100foldstudio_top_bar_l(); ?>
-            <?php _100foldstudio_top_bar_r(); ?>
+            <?php _100foldstudio_top_bar(); ?>
         </section>
     </nav>
 </div>

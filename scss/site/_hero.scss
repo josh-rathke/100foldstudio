@@ -19,30 +19,64 @@
 		.download { margin-top: rem-calc(20); }
 	}
 
-ul.main-menu {
-    height: 60px;
+ul.top-bar-menu {
+    height: 70px !important;
     margin: 0px;
     position: fixed;
     left: 0px;
     top: 0px;
     right: 0px;
+    text-transform: uppercase;
     z-index: 9999;
+    @include transition(.5s);
     
     img {
         height: 100%;
+        float: left;
+        margin-left: -70px;
+        padding: 6px;
+        @include transition(.35s);
     }
-
+    
     li {
-        border-radius: 5px;
-        color: white;
-        display: inline-block;
-        font-family:'Century Gothic W01';
-        font-size: 14px;
-        padding: 4px 10px;
-        text-transform: uppercase;
+        height: 70px;
         
-        &.right {
-            padding: 4px 10px;
+        a {
+            font-family:'Century Gothic W01' !important;
+            font-weight: normal;
+            line-height: 70px !important;
+            text-transform: uppercase;
+        }
+        
+        &.active:not(.has-form) a:not(.button),
+        &.active:not(.has-form) a:hover:not(.button){
+            background: transparent;
+        }
+        
+        &.has-dropdown>a:after {
+            border-color: rgba(255,255,255,1) transparent transparent transparent;
+            top: 35px !important;
+        }
+
+        &.has-dropdown:hover {
+            background: white;
+            
+            a {
+                color: #666 !important;
+            }
+            
+            >a:after {
+                border-color: rgba(0,0,0,0.6) transparent transparent transparent
+            }
+        }
+        
+        .sub-menu {
+            background: white;
+            
+            a {
+                font-size: 12px;
+                line-height: 2rem !important;
+            }
         }
     }
 }
