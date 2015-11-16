@@ -56,6 +56,9 @@ require_once( 'library/tgm-plugin-activation/tgm-plugin-activation-config.php' )
 /** Add Custom Post Typs **/
 require_once( 'library/custom-post-types/projects_cpt.php' );
 
+/** Add Custom Taxonomies **/
+require_once( 'library/custom-taxonomies/project_classification_tax.php' );
+
 
 
 if ( ! class_exists( 'Redux' ) ) {
