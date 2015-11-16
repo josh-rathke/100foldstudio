@@ -27,13 +27,14 @@
 	<body <?php body_class(); ?>>
 	<?php do_action( '_100foldstudio_after_body' ); ?>
         
+        <?php if ( is_front_page() ) { ?>
+        
         <div class="hero-header clearfix">
             
             <div id="heroHeader" class="hero-description">
                 <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/100FoldLogo-white.png" />
-                <p>Providing innovative and affordable design services for local and global missions.</p>
+                <p>We train, equip, and send architects to serve organizations reaching the unreached.</p>
                 <a href="#_" class="hero-primary-link">Learn More</a>
-                <a href="#_" class="hero-secondary-link">Projects</a>
             </div>
             
             <div class="full-screen-video">
@@ -43,7 +44,10 @@
                 Your browser does not support the video tag.
                 </video>
             </div>
+            
         </div>
+        
+        <?php } ?>
 	
 	<div class="off-canvas-wrap" data-offcanvas>
 	<div class="inner-wrap">

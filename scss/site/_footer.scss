@@ -6,5 +6,111 @@
 }
 
 .footer {
-    background: #DDD;
+    background: #BBBBBB;
+    padding-top: 40px;
+    
+    h5 {
+        color: white;
+        font-family:"Century Gothic W01";
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+    
+    // Gravity Forms Hacks for Contact Form
+    .gform_wrapper .top_label .gfield_label {
+        display: none;
+    }
+    
+    .gform_wrapper .gfield_date_day label, 
+    .gform_wrapper .gfield_date_month label,
+    .gform_wrapper .gfield_date_year label,
+    .gform_wrapper .gfield_time_ampm label,
+    .gform_wrapper .gfield_time_hour label,
+    .gform_wrapper .gfield_time_minute label,
+    .gform_wrapper .ginput_complex label,
+    .gform_wrapper .instruction {
+        display: none;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="week"],
+    input[type="email"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    input[type="color"],
+    textarea {
+        background: #E9E9E9;
+        border: 1px solid transparent;
+        box-shadow: none !important;
+        color: #444444 !important;
+        font-family:"Century Gothic W01" !important;
+        font-size: 14px !important;
+        padding: 12px !important;
+    }
+    
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="date"]:focus,
+    input[type="datetime"]:focus,
+    input[type="datetime-local"]:focus,
+    input[type="month"]:focus,
+    input[type="week"]:focus,
+    input[type="email"]:focus,
+    input[type="number"]:focus,
+    input[type="search"]:focus,
+    input[type="tel"]:focus,
+    input[type="time"]:focus,
+    input[type="url"]:focus,
+    input[type="color"]:focus,
+    textarea:focus {
+        border: 2px solid #999;
+    }
+    
+    .gform_button {
+        background: #999 !important;
+    }
+    
+    ::-webkit-input-placeholder {
+       color: #AAA;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: #AAA;  
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: #AAA;  
+    }
+
+    :-ms-input-placeholder {  
+       color: #AAA;  
+    }
+    
+    .join-us {
+        
+        ul {
+            margin: 0px;
+            font-family:"Century Gothic W01";
+            font-weight: 500;
+            
+            li {
+                list-style-type: none;
+                
+                a {
+                    color: white;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
 }

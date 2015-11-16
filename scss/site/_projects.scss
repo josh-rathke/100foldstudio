@@ -1,0 +1,22 @@
+#projects-map {
+    height: 400px;
+    width: 100%;
+}
+
+.project-modal {
+    border-radius: 0px;
+    border: none !important;
+    padding: 0px !important;
+    position: fixed;
+    top: 70px !important;
+    right: 0px;
+    left: 100%;
+    bottom: 0px;
+    max-width: 100%;
+    width: 100%;
+    @include transition(.25s);
+
+    &.open {
+        left: 0% !important;
+    }
+}

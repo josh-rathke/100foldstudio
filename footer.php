@@ -17,17 +17,26 @@
 	   <?php do_action( '_100foldstudio_before_footer' ); ?>
 	   
         <div class="columns medium-4">
-            Latest News
+            <h5>Latest News</h5>
+            <a class="twitter-timeline" href="https://twitter.com/100foldstudio" data-widget-id="362302602966364161" data-chrome="transparent">Tweets by @100foldstudio</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </div>
         <div class="columns medium-4">
-            Connect
+            <h5>Connect</h5>
+            <?php echo do_shortcode('[gravityform id="1" title="false" description="false"]'); ?>
         </div>
-        <div class="columns medium-4">
-            Join Us
+        <div class="columns medium-4 join-us">
+            <h5>Join Us</h5>
+            <?php _100foldstudio_join_us(); ?>
         </div>
         
 	   <?php do_action( '_100foldstudio_after_footer' ); ?>
     </div>
+    
+    <div class="footer-sub-menu" style="background: white;">
+        This is some text test | test | test | test |test
+    </div>
+    
 </footer>
 <a class="exit-off-canvas"></a>
 

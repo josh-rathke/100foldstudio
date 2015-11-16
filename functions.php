@@ -53,7 +53,8 @@ require_once( 'library/tgm-plugin-activation/class-tgm-plugin-activation.php' );
 require_once( 'library/tgm-plugin-activation/tgm-plugin-activation-config.php' );
 
 
-
+/** Add Custom Post Typs **/
+require_once( 'library/custom-post-types/projects_cpt.php' );
 
 
 

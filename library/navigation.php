@@ -11,6 +11,7 @@
 register_nav_menus(array(
 	'top-bar' => 'Top Bar', // Registers the menu in the WordPress admin menu editor.
 	'mobile-off-canvas' => 'Mobile',
+    'join-us' => 'Join Us',
 ));
 
 
@@ -44,7 +45,7 @@ if ( ! function_exists( '_100foldstudio_top_bar' ) ) {
 add_filter('wp_nav_menu_items','add_new_menu_item', 10, 2);
 function add_new_menu_item( $nav, $args ) {
     if( $args->theme_location == 'top-bar' )
-    $newmenuitem = '<img src="' . get_bloginfo("template_url") . '/assets/img/100FoldLogo-white.png" />';
+    $newmenuitem = '<img src="' . get_bloginfo("template_url") . '/assets/img/logo_on_white_only.png" />';
     $nav = $newmenuitem.$nav;
     return $nav;
 }
@@ -71,6 +72,29 @@ if ( ! function_exists( '_100foldstudio_mobile_off_canvas' ) ) {
 	    ));
 	}
 }
+
+
+/**
+ * Join Us
+ */
+if ( ! function_exists( '_100foldstudio_join_us' ) ) {
+	function _100foldstudio_join_us() {
+	    wp_nav_menu(array(
+	        'container' => false,                           // Remove nav container
+	        'container_class' => '',                        // Class of container
+	        'menu' => '',                                   // Menu name
+	        'menu_class' => 'join-us-list',                 // Adding custom nav class
+	        'theme_location' => 'join-us',                  // Where it's located in the theme
+	        'before' => '',                                 // Before each link <a>
+	        'after' => '',                                  // After each link </a>
+	        'link_before' => '',                            // Before each link text
+	        'link_after' => '',                             // After each link text
+	        'depth' => 1,                                   // Limit the depth of the nav
+	    ));
+	}
+}
+
+
 
 /**
  * Add support for buttons in the top-bar menu:

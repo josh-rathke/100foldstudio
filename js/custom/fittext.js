@@ -1,0 +1,1 @@
+jQuery(".parralax-heading").fitText(1.8, { minFontSize: '48px', maxFontSize: '100px' });
