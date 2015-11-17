@@ -30,6 +30,7 @@ function project_classification_tax() {
         'labels'            => $labels,
         'show_ui'           => true,
         'show_admin_column' => true,
+        'show_in_quick_edit'=> false,
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'project-classifications' ),
     );
