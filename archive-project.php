@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php 
+
+get_header(); 
+
+// Retrieve all of the 100 fold studio options from the Redux Framework.
+global $_100foldstudio_options;
+?>
+
 
 
 <script type="text/javascript"
@@ -9,7 +16,43 @@
 
 <div class="row">
     <div class="columns medium-12">
-        <h1>Projects</h1>
+        <h1>Our Work</h1>
+        <p class="our-work-description"><?php echo $_100foldstudio_options['our_work_description'] ?></p>
+        
+        <?php
+        // List All Projects Ordered By User Preference
+        $ordered_project_classifications = $_100foldstudio_options['project_classification_order'];
+        foreach ($ordered_project_classifications as $key => $project_classification) {
+            
+            // Populate Term Variable With Current Term Information
+            $term = get_term($project_classification, 'project_classification');
+            
+            // Display Section Title
+            echo '<h5>' . $term->name . '</h5>';
+            
+            // Open A Block Grid Element
+            echo '<ul class="medium-block-grid-4 project-class-container">';
+
+            // The Query
+            $the_query = new WP_Query( "project_classification={$term->name}" );
+
+            // The Loop
+            if ( $the_query->have_posts() ) { 
+                while ( $the_query->have_posts() ) {
+                    $the_query->the_post();
+                    echo '<li><div class="project-content-container">' . get_the_title() . '</div></li>';
+                }
+            } else {
+                echo 'Sorry but no projects were found.';
+            }
+            /* Restore original Post Data */
+            wp_reset_postdata();
+            
+            // Close the block grid
+            echo '</ul>';
+        }
+        
+        ?>
         
         <ul class="medium-block-grid-4">
             <li><a href="#" class="reveal-modal-link" data-reveal-id="firstModal">Test</a></li>

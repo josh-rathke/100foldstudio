@@ -3,6 +3,23 @@
     width: 100%;
 }
 
+.our-work-description {
+    color: #999;
+    padding: 0px 60px;
+    margin-bottom: 60px;
+}
+
+.project-class-container {
+    
+    li {
+        
+        .project-content-container {
+            border: 2px solid #CCC;
+            height: 200px;
+        }
+    }
+}
+
 .project-modal {
     border-radius: 0px;
     border: none !important;

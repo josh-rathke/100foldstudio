@@ -7,7 +7,7 @@
  *  classification needed to best organize the projects on the page.
  */
 
-add_action( 'init', 'project_classification_tax' );
+add_action( 'init', 'project_classification_tax', 1 );
 
 function project_classification_tax() {
     // Add new taxonomy, make it hierarchical (like categories)
