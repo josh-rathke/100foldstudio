@@ -15,7 +15,59 @@
         
         .project-content-container {
             border: 2px solid #CCC;
-            height: 200px;
+            height: 270px;
+            padding: 20px 10px;
+            position: relative;
+            
+            &:hover .hover-placeholder {
+                visibility: visible;
+                opacity: 1;
+            }
+            
+            .hover-placeholder {
+                background-size: auto 100% !important;
+                position: absolute;
+                top: -2px;
+                right: -2px;
+                bottom: -2px;
+                left: -2px;
+                visibility: hidden;
+                opacity: 0;
+                @include transition(.25s);
+                
+            }
+            
+            h6 {
+                text-align: center;
+            }
+            
+            .project-location {
+                color: #666;
+                font-size: 14px;
+                text-align: center;
+            }
+            
+            .ajax-load-bar {
+                background: #EEE;
+                height: 4px;
+                margin: 10px auto;
+                width: 70%;
+            }
+            
+            p {
+                color: #666;
+                font-size: 14px;
+                text-align: center;
+            }
+            
+            img.project-preview {
+                background: #EFEFEF;
+                border-radius: 999px;
+                display: block;
+                height: 40px;
+                margin: 0px auto;
+                width: 40px;
+            }
         }
     }
 }

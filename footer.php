@@ -33,7 +33,7 @@
 	   <?php do_action( '_100foldstudio_after_footer' ); ?>
     </div>
     
-    <div class="footer-sub-menu" style="background: white;">
+    <div class="footer-sub-menu">
         This is some text test | test | test | test |test
     </div>
     

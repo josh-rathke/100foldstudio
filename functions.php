@@ -58,9 +58,9 @@ require_once( 'library/custom-post-types/projects_cpt.php' );
 /** Add Custom Taxonomies **/
 require_once( 'library/custom-taxonomies/project_classification_tax.php' );
 
-require_once( 'custom-meta.php' );
-
 /** Add Theme Options **/
 require_once( 'library/theme-options.php');
+
+require_once( 'custom-meta.php' );
 
 ?>

@@ -31,7 +31,7 @@ global $_100foldstudio_options;
             echo '<h5>' . $term->name . '</h5>';
             
             // Open A Block Grid Element
-            echo '<ul class="medium-block-grid-4 project-class-container">';
+            echo '<ul class="large-block-grid-3 medium-block-grid-2 project-class-container">';
 
             // The Query
             $the_query = new WP_Query( "project_classification={$term->name}" );
@@ -39,8 +39,23 @@ global $_100foldstudio_options;
             // The Loop
             if ( $the_query->have_posts() ) { 
                 while ( $the_query->have_posts() ) {
-                    $the_query->the_post();
-                    echo '<li><div class="project-content-container">' . get_the_title() . '</div></li>';
+                    $the_query->the_post(); ?>
+                    <li>
+                        <a href="#" class="reveal-modal-link" data-reveal-id="<?php echo 'modal-' . $post->ID ?>">
+                        <div class="project-content-container">
+                            
+                            <div class="hover-placeholder" style="background: url(<?php echo wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'large' )[0]; ?>) no-repeat center center;"></div>
+                            <h6><?php the_title(); ?></h6>
+                            <div class="project-location"><?php echo rwmb_meta('100foldstudio_project_location'); ?></div>
+                            <div class="ajax-load-bar"></div>
+                            <p>A super catchy phrase that draws people into the project.</p>
+                            <?php echo get_the_post_thumbnail($post->ID, 'post-thumbnail', 'class=project-preview' ); ?>
+                    
+                            
+                        </div>
+                        </a>
+                    </li>
+                <?php
                 }
             } else {
                 echo 'Sorry but no projects were found.';

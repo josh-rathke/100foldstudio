@@ -1,11 +1,73 @@
-var colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00'];
 var map;
 
 function initialize() {
+    
+    var styles = [
+        {
+            "featureType": "landscape",
+            "elementType": "all",
+            "stylers": [{
+                "color": "#CCCCCC"
+            }]
+        }, {
+            "featureType": "administrative",
+            "elementType": "labels",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        }, {
+            "featureType": "water",
+            "elementType": "labels",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        }, {
+            "featureType": "administrative",
+            "elementType": "geometry",
+            "stylers": [{
+                "color": "#FFFFFF"
+            }, {
+                "weight": 1,
+            }]
+        }, {
+            "featureType": "water",
+            "elementType": "all",
+            "stylers": [{
+                "color": "#FFFFFF"
+            }]
+        }, {
+            "featureType": "administrative.province",
+            "elementType": "geometry",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        }, {
+            "featureType": "administrative",
+            "elementType": "geometry.fill",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        }, {
+            "featureType": "road",
+            "elementType": "all",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        }, {
+            "featureType": "poi",
+            "elementType": "all",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        }
+    ];
+    
     var myOptions = {
         zoom: 2,
         center: new google.maps.LatLng(10, 0),
+        disableDefaultUI: true,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: styles,
         scrollwheel: false,
     };
 
@@ -27,6 +89,7 @@ function initialize() {
     body.appendChild(script);
 }
 
+
 function drawMap(data) {
     var rows = data['rows'];
     for (var i in rows) {
@@ -43,20 +106,21 @@ function drawMap(data) {
             var randomnumber = Math.floor(Math.random() * 4);
             var country = new google.maps.Polygon({
                 paths: newCoordinates,
-                strokeColor: colors[randomnumber],
-                strokeOpacity: 0,
+                strokeColor: "#FFFFFF",
+                strokeOpacity: 1,
                 strokeWeight: 1,
-                fillColor: colors[randomnumber],
+                fillColor: "#CCCCCC",
                 fillOpacity: 0.3
             });
             google.maps.event.addListener(country, 'mouseover', function () {
                 this.setOptions({
+                    fillColor: "#77CCD6",
                     fillOpacity: 1
                 });
             });
             google.maps.event.addListener(country, 'mouseout', function () {
                 this.setOptions({
-                    fillOpacity: 0.3
+                    fillColor: "#CCCCCC"
                 });
             });
 
