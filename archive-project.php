@@ -39,12 +39,14 @@ global $_100foldstudio_options;
             // The Loop
             if ( $the_query->have_posts() ) { 
                 while ( $the_query->have_posts() ) {
-                    $the_query->the_post(); ?>
+                    $the_query->the_post(); 
+                    $post_thumbnail_url = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'large' );
+                    ?>
                     <li>
                         <a href="#" class="reveal-modal-link" data-reveal-id="<?php echo 'modal-' . $post->ID ?>">
                         <div class="project-content-container">
                             
-                            <div class="hover-placeholder" style="background: url(<?php echo wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'large' )[0]; ?>) no-repeat center center;"></div>
+                            <div class="hover-placeholder" style="background: url(<?php echo $post_thumbnail_url[0]; ?>) no-repeat center center;"></div>
                             <h6><?php the_title(); ?></h6>
                             <div class="project-location"><?php echo rwmb_meta('100foldstudio_project_location'); ?></div>
                             <div class="ajax-load-bar"></div>
