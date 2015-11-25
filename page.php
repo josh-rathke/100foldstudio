@@ -13,6 +13,8 @@
 
 get_header(); ?>
 
+<?php the_post_thumbnail('full'); ?>
+
 <div class="row">
 	<div class="medium-10 medium-centered columns" role="main">
 

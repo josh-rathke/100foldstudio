@@ -17,6 +17,7 @@ $tw_consumer_secret = $_100foldstudio_options['twitter_consumer_secret'];
 $tw_access_token = $_100foldstudio_options['twitter_access_token'];
 $tw_access_token_secret = $_100foldstudio_options['twitter_access_token_secret'];
 
+
 ?>
 
 </section>
@@ -24,12 +25,11 @@ $tw_access_token_secret = $_100foldstudio_options['twitter_access_token_secret']
 <?php 
 
 /** Add Twitter OAuth PHP Plugin **/
-require "library/twitteroauth/autoload.php";
+require_once "library/twitteroauth/autoload.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 $connection = new TwitterOAuth($tw_consumer_key, $tw_consumer_secret, $tw_access_token, $tw_access_token_secret);
-$tweets = $connection->get("statuses/user_timeline", array("count" => 3, "exclude_replies" => true)); 
-print_r($tweets);?>
+$tweets = $connection->get("statuses/user_timeline", array("count" => 3, "exclude_replies" => true)); ?>
 
 
 <footer class="footer">

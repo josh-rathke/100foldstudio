@@ -12,6 +12,7 @@ $meta_boxes = array();
 
 require_once( 'library/custom-meta/front-page-custom-meta.php' );
 require_once( 'library/custom-meta/project-custom-meta.php' );
+require_once( 'library/custom-meta/guest-authors-custom-meta.php' );
 
 
 /**
