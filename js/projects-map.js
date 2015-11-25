@@ -110,7 +110,7 @@ function drawMap(data) {
                 strokeOpacity: 1,
                 strokeWeight: 1,
                 fillColor: "#CCCCCC",
-                fillOpacity: 0.3
+                fillOpacity: 1,
             });
             google.maps.event.addListener(country, 'mouseover', function () {
                 this.setOptions({

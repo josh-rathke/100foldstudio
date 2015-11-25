@@ -1,5 +1,5 @@
 #projects-map {
-    height: 400px;
+    height: 480px;
     width: 100%;
 }
 
@@ -20,8 +20,8 @@
             position: relative;
             
             &:hover .hover-placeholder {
-                visibility: visible;
-                opacity: 1;
+                visibility: hidden;
+                opacity: 0;
             }
             
             .hover-placeholder {
@@ -31,8 +31,8 @@
                 right: -2px;
                 bottom: -2px;
                 left: -2px;
-                visibility: hidden;
-                opacity: 0;
+                visibility: visible;
+                opacity: 1;
                 @include transition(.25s);
                 
             }
@@ -83,9 +83,25 @@
     bottom: 0px;
     max-width: 100%;
     width: 100%;
-    @include transition(.25s);
+    @include transition(.40s);
 
     &.open {
         left: 0% !important;
     }
+    
+    .close-reveal-modal {
+        background: $primary_color;
+        color: white;
+        right: 0px;
+        top: 0px;
+        padding: 16px 22px 22px 22px;
+    }
+    
+    .project-modal-header {
+        width: 100%;
+        height: 450px;
+        @include background-size(cover !important);
+    }
+    
+    
 }

@@ -28,4 +28,4 @@ $meta_boxes[] = array(
             'desc' => 'Enter the two-letter ISO country code of the country that the project resides in. References for country codes can be found here: https://countrycode.org/'
 		),
 	),
-);
+); ?>

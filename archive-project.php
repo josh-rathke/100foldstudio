@@ -31,7 +31,7 @@ global $_100foldstudio_options;
             echo '<h5>' . $term->name . '</h5>';
             
             // Open A Block Grid Element
-            echo '<ul class="large-block-grid-3 medium-block-grid-2 project-class-container">';
+            echo '<ul class="medium-block-grid-4 project-class-container">';
 
             // The Query
             $the_query = new WP_Query( "project_classification={$term->name}" );
@@ -39,14 +39,12 @@ global $_100foldstudio_options;
             // The Loop
             if ( $the_query->have_posts() ) { 
                 while ( $the_query->have_posts() ) {
-                    $the_query->the_post(); 
-                    $post_thumbnail_url = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'large' );
-                    ?>
+                    $the_query->the_post(); ?>
                     <li>
                         <a href="#" class="reveal-modal-link" data-reveal-id="<?php echo 'modal-' . $post->ID ?>">
                         <div class="project-content-container">
                             
-                            <div class="hover-placeholder" style="background: url(<?php echo $post_thumbnail_url[0]; ?>) no-repeat center center;"></div>
+                            <div class="hover-placeholder" style="background: url(<?php echo wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'large' )[0]; ?>) no-repeat center center;"></div>
                             <h6><?php the_title(); ?></h6>
                             <div class="project-location"><?php echo rwmb_meta('100foldstudio_project_location'); ?></div>
                             <div class="ajax-load-bar"></div>
@@ -57,6 +55,7 @@ global $_100foldstudio_options;
                         </div>
                         </a>
                     </li>
+                    <?php include('parts/project-page-modal.php'); ?>
                 <?php
                 }
             } else {
@@ -70,68 +69,10 @@ global $_100foldstudio_options;
         }
         
         ?>
-        
-        <ul class="medium-block-grid-4">
-            <li><a href="#" class="reveal-modal-link" data-reveal-id="firstModal">Test</a></li>
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
-        </ul>
     </div>
 </div>
 
-<!-- Reveal Modals begin -->
-<div id="firstModal" class="reveal-modal project-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
-    
-    <div style="height: 100%; overflow: scroll">
-  <h2 id="firstModalTitle">This is a modal.</h2>
-  <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
-  <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-  <p><a href="#" data-reveal-id="secondModal" class="secondary button">Second Modal...</a></p>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-    <h2 id="firstModalTitle">This is a modal.</h2>
-  <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
-  <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-  <p><a href="#" data-reveal-id="secondModal" class="secondary button">Second Modal...</a></p>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-    <h2 id="firstModalTitle">This is a modal.</h2>
-  <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
-  <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-  <p><a href="#" data-reveal-id="secondModal" class="secondary button">Second Modal...</a></p>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-    <h2 id="firstModalTitle">This is a modal.</h2>
-  <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
-  <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-  <p><a href="#" data-reveal-id="secondModal" class="secondary button">Second Modal...</a></p>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-    <h2 id="firstModalTitle">This is a modal.</h2>
-  <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
-  <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-  <p><a href="#" data-reveal-id="secondModal" class="secondary button">Second Modal...</a></p>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-    <h2 id="firstModalTitle">This is a modal.</h2>
-  <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
-  <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-  <p><a href="#" data-reveal-id="secondModal" class="secondary button">Second Modal...</a></p>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-    <h2 id="firstModalTitle">This is a modal.</h2>
-  <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
-  <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-  <p><a href="#" data-reveal-id="secondModal" class="secondary button">Second Modal...</a></p>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-    <h2 id="firstModalTitle">This is a modal.</h2>
-  <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
-  <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-  <p><a href="#" data-reveal-id="secondModal" class="secondary button">Second Modal...</a></p>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-    </div>
-    
-</div>
+
 
 
 

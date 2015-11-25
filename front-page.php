@@ -5,6 +5,8 @@
  *  This is the front page of the website.
  *  Whatever is used in this page will be displayed on
  *  the front or first page of the website.
+ *
+ *  Template Name: Front Page
  */ 
 
 get_header(); ?>
@@ -16,12 +18,8 @@ get_header(); ?>
 <div class="row front-page">
 
     <div class="columns medium-12 opening-statement">
-        <h2>Creating Places of Change</h2>
-        <p>OPENING STATEMENT That describes what we do. Vestibulum ante ipsum primis in
-faucibus orci luctus et ultrices posuere cubilia Curae; Sed ultricies laoreet nunc, vitae
-porta turpis. Nullam felis sem, tincidunt in fringilla a, vulputate nec felis. Sed feugiat at
-risus eu tincidunt. Curabitur nec fermentum magna. In auctor metus mi, ac ultrices
-massa lobortis fermentum. Donec id dui id metus dapibus malesuada</p>
+        <h2><?php the_title(); ?></h2>
+        <?php the_content(); ?>
     </div>
     
     <div class="columns medium-12 whats-new-container">
@@ -57,22 +55,32 @@ admodum reprehendunt eu.</p>
         </ul>
     </div>
 </div>
-    
-<div class="full-width-parralax" data-parallax="scroll" data-image-src="<?php echo get_bloginfo('template_directory'); ?>/assets/img/playing.jpg">
-    <h2 class="parralax-heading vertical-align-relative">Creating Places of Change</h2>
+
+<?php // Get Parallax Background Image
+    $background_image_url = wp_get_attachment_url(rwmb_meta('100foldstudio_parallax_background_image'));
+?>
+
+<div class="full-width-parralax" data-parallax="scroll" data-image-src="<?php echo $background_image_url; ?>">
+    <h2 class="parralax-heading vertical-align-relative"><?php echo rwmb_meta( '100foldstudio_parralax_phrase' ); ?></h2>
 </div>
 
-<div class="row donate-now">
-    <div class="columns medium-8">
+<div class="row project-description">
+    <div class="columns medium-8 medium-centered">
         <h2>Our Projects</h2>
         <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed
 ultricies laoreet nunc, vitae porta turpis. Nullam felis sem, tincidunt in fringilla a, vulputate nec felis.</p>
     </div>
-    <div class="columns medium-4">
+    
+    <div class="columns medium-4 medium-offset-2">
         <a href="#_" class="button full-width-button">Donate</a>
     </div>
     
+    <div class="columns medium-4 end">
+        <a href="#_" class="button inverted full-width-button">Donate</a>
+    </div>
+</div>
     
+<div class="row">    
     <div class="columns medium-12">
         <blockquote class="full-width">"And those are the ones on whom seed was sown on the good soil; and they hear the
 word and accept it and bear fruit, thirty, sixty, and a hundredfold." Mark 4:20</blockquote>

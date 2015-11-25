@@ -9,17 +9,43 @@
  * @since FoundationPress 1.0
  */
 
+// Retrieve 100 Fold Studio Options
+global $_100foldstudio_options;
+
+$tw_consumer_key = $_100foldstudio_options['twitter_consumer_key'];
+$tw_consumer_secret = $_100foldstudio_options['twitter_consumer_secret'];
+$tw_access_token = $_100foldstudio_options['twitter_access_token'];
+$tw_access_token_secret = $_100foldstudio_options['twitter_access_token_secret'];
+
 ?>
 
 </section>
+
+<?php 
+
+/** Add Twitter OAuth PHP Plugin **/
+require "library/twitteroauth/autoload.php";
+use Abraham\TwitterOAuth\TwitterOAuth;
+
+$connection = new TwitterOAuth($tw_consumer_key, $tw_consumer_secret, $tw_access_token, $tw_access_token_secret);
+$tweets = $connection->get("statuses/user_timeline", array("count" => 3, "exclude_replies" => true)); 
+print_r($tweets);?>
+
+
 <footer class="footer">
     <div class="row">
 	   <?php do_action( '_100foldstudio_before_footer' ); ?>
 	   
         <div class="columns medium-4">
             <h5>Latest News</h5>
-            <a class="twitter-timeline" href="https://twitter.com/100foldstudio" data-widget-id="362302602966364161" data-chrome="transparent">Tweets by @100foldstudio</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            
+            <?php
+            foreach($tweets as $tweet) {
+                echo $tweet->text;
+            }
+            
+            ?>
+            
         </div>
         <div class="columns medium-4">
             <h5>Connect</h5>

@@ -105,6 +105,14 @@ blockquote {
     font-weight: 700;
     text-transform: uppercase;
     
+    &.inverted {
+        background: white;
+        border: 3px solid $primary_color;
+        color: $primary_color;
+        height: 60px;
+        padding: .8rem 2rem 1.0625rem 2rem;
+    }
+    
     &.full-width-button {
         width: 100%;   
     }
@@ -126,7 +134,6 @@ blockquote {
         color: white;
     }
 }
-
 
 // Full Width Parralax Section
 .full-width-parralax {
