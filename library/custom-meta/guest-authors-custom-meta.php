@@ -20,6 +20,7 @@ $meta_boxes[] = array(
 				'options' => array(
 					'founder'      => __( 'Founder', '100foldstudio' ),
 					'board-member' => __( 'Board Member', '100foldstudio' ),
+                    // Staff, Intern,
 				),
 			),
 	),
