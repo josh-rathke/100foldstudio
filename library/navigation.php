@@ -9,9 +9,10 @@
  */
 
 register_nav_menus(array(
-	'top-bar' => 'Top Bar', // Registers the menu in the WordPress admin menu editor.
-	'mobile-off-canvas' => 'Mobile',
-    'join-us' => 'Join Us',
+	'top-bar'             => 'Top Bar',
+	'mobile-off-canvas'   => 'Mobile',
+    'join-us'             => 'Join Us',
+    'copyright-bar'       => 'Copyright Bar',
 ));
 
 
@@ -42,12 +43,22 @@ if ( ! function_exists( '_100foldstudio_top_bar' ) ) {
 /**
  *  Add Logo to Top Bar
  */
-add_filter('wp_nav_menu_items','add_new_menu_item', 10, 2);
-function add_new_menu_item( $nav, $args ) {
-    if( $args->theme_location == 'top-bar' )
-    $newmenuitem = '<img src="' . get_bloginfo("template_url") . '/assets/img/logo_on_white_only.png" />';
-    $nav = $newmenuitem.$nav;
-    return $nav;
+add_filter('wp_nav_menu_items','add_custom_menu_items', 10, 2);
+function add_custom_menu_items( $nav, $args ) {
+    
+    // Logo to Top Bar
+    if( $args->theme_location == 'top-bar' ) {
+        //$newmenuitem = '<img src="' . get_bloginfo("template_url") . '/assets/img/logo_on_white_only.png" />';
+        //$nav = $newmenuitem.$nav;
+        return $nav;
+    }
+    
+    // Add Copyright to Copyright Bar
+    if( $args->theme_location == 'copyright-bar' ) {
+        $newmenuitem = '<span class="copyright">&copy; 2015 100 Fold Studio, All Rights Reserved</span>';
+        $nav = $newmenuitem.$nav;
+        return $nav;
+    }
 }
 
 
@@ -85,6 +96,27 @@ if ( ! function_exists( '_100foldstudio_join_us' ) ) {
 	        'menu' => '',                                   // Menu name
 	        'menu_class' => 'join-us-list',                 // Adding custom nav class
 	        'theme_location' => 'join-us',                  // Where it's located in the theme
+	        'before' => '',                                 // Before each link <a>
+	        'after' => '',                                  // After each link </a>
+	        'link_before' => '',                            // Before each link text
+	        'link_after' => '',                             // After each link text
+	        'depth' => 1,                                   // Limit the depth of the nav
+	    ));
+	}
+}
+
+
+/**
+ * Copyright Bar
+ */
+if ( ! function_exists( '_100foldstudio_copyright_bar' ) ) {
+	function _100foldstudio_copyright_bar() {
+	    wp_nav_menu(array(
+	        'container' => false,                           // Remove nav container
+	        'container_class' => '',                        // Class of container
+	        'menu' => '',                                   // Menu name
+	        'menu_class' => 'copyright0-bar-list',          // Adding custom nav class
+	        'theme_location' => 'copyright-bar',            // Where it's located in the theme
 	        'before' => '',                                 // Before each link <a>
 	        'after' => '',                                  // After each link </a>
 	        'link_before' => '',                            // Before each link text

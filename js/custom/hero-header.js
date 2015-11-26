@@ -22,15 +22,15 @@ function render_hero_header() {
         //$('.main-menu').css('background', 'rgba( 255, 255, 255, ' + main_menu_opacity + ')');
 
         if (menu_position > 0.8) {
-            $('.top-bar-menu').css('background', 'white');
-            $('.top-bar-menu').css('box-shadow', '0px 0px 15px -3px #333');
-            $('.top-bar-menu img').css('margin-left', '0px');
-            $('.top-bar-menu li a').css('color', '#666666');
+            $('.top-bar').css('background', 'white');
+            $('.top-bar').css('box-shadow', '0px 0px 15px -3px #333');
+            $('.top-bar img').css('margin-left', '0px');
+            $('.top-bar li a').css('color', '#666666');
         } else {
-            $('.top-bar-menu').css('background', 'transparent');
-            $('.top-bar-menu').css('box-shadow', 'none');
-            $('.top-bar-menu img').css('margin-left', '-70px');
-            $('.top-bar-menu li a').css('color', '#FFFFFF');
+            $('.top-bar').css('background', 'transparent');
+            $('.top-bar').css('box-shadow', 'none');
+            $('.top-bar img').css('margin-left', '-70px');
+            $('.top-bar li a').css('color', '#FFFFFF');
         }
 
         //Parralax The Hero Description

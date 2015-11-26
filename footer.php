@@ -60,7 +60,7 @@ $tweets = $connection->get("statuses/user_timeline", array("count" => 3, "exclud
     </div>
     
     <div class="footer-sub-menu">
-        This is some text test | test | test | test |test
+        <?php _100foldstudio_copyright_bar(); ?>
     </div>
     
 </footer>

@@ -14,6 +14,12 @@
   background-size: $size;
 }
 
+@mixin transform($transformation) {
+  -ms-transform: $transformation;
+  -webkit-transform: $transformation;
+  transform: $transformation;
+}
+
 // Vertical Align
 @mixin vertical-align-relative {
   position: relative;

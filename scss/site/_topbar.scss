@@ -5,18 +5,92 @@
     
     .top-bar {
         height: 70px;
+        max-width: 100%;
+        @include transition(.5s);
 
-        .name {
-           h1 a { font-weight: 500; }
+        .title-area {
+           display: none;
         }
-    }
+        
+        ul.top-bar-menu {
+            position: absolute;
+            right: 0px;
+            text-transform: uppercase;
 
-    // A more subtle background color for the active menu item
-    .top-bar-section li.active:not(.has-form) a:not(.button)  {
-        background: #272727;
-    }
-    .top-bar-section li.active:not(.has-form) a:hover:not(.button) {
-        background: #202020;
+            img {
+                height: 100%;
+                float: left;
+                margin-left: -70px;
+                padding: 24px;
+                @include transition(.35s);
+            }
+
+            > li {
+                height: 70px;
+
+                > a {
+                    font-family:'Century Gothic W01' !important;
+                    font-weight: normal;
+                    line-height: 70px !important;
+                    position: relative;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    text-decoration: none;
+
+                    &:before {
+                      content: "";
+                      position: absolute;
+                      width: 70%;
+                      height: 3px;
+                      bottom: 16px;
+                      left: 15%;
+                      background-color: #DDD;
+                      visibility: hidden;
+                      -webkit-transform: scaleX(0);
+                      transform: scaleX(0);
+                      -webkit-transition: all 0.3s ease-in-out 0s;
+                      transition: all 0.3s ease-in-out 0s;
+                    }
+
+                    &:hover:before {
+                      visibility: visible;
+                      -webkit-transform: scaleX(1);
+                      transform: scaleX(1);
+                    }
+                }
+
+                &.active:not(.has-form) a:not(.button),
+                &.active:not(.has-form) a:hover:not(.button){
+                    background: transparent;
+                }
+
+                &.has-dropdown>a:after {
+                    border-color: rgba(255,255,255,1) transparent transparent transparent;
+                    top: 35px !important;
+                }
+
+                &.has-dropdown:hover {
+                    background: white;
+
+                    a {
+                        color: #666 !important;
+                    }
+
+                    >a:after {
+                        border-color: rgba(0,0,0,0.6) transparent transparent transparent
+                    }
+                }
+
+                .sub-menu {
+                    background: white;
+
+                    a {
+                        font-size: 12px;
+                        line-height: 2rem !important;
+                    }
+                }
+            }
+        }
     }
 
     // Switch between the mobile menu (tab-bar) and desktop menu (topbar) based on a custom $topbar-breakpoint value.

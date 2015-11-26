@@ -61,7 +61,9 @@ admodum reprehendunt eu.</p>
 ?>
 
 <div class="full-width-parralax" data-parallax="scroll" data-image-src="<?php echo $background_image_url; ?>">
-    <h2 class="parralax-heading vertical-align-relative"><?php echo rwmb_meta( '100foldstudio_parralax_phrase' ); ?></h2>
+    <div class="row vertical-align-relative"><div class="columns small-12">
+        <h2 class="parralax-heading"><?php echo rwmb_meta( '100foldstudio_parralax_phrase' ); ?></h2>
+    </div></div>
 </div>
 
 <div class="row project-description">
@@ -72,7 +74,7 @@ ultricies laoreet nunc, vitae porta turpis. Nullam felis sem, tincidunt in fring
     </div>
     
     <div class="columns medium-4 medium-offset-2">
-        <a href="#_" class="button full-width-button">Donate</a>
+        <a href="<?php echo get_site_url(); ?>/projects/" class="button full-width-button">Learn More</a>
     </div>
     
     <div class="columns medium-4 end">
