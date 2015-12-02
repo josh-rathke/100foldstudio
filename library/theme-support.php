@@ -20,12 +20,31 @@ function _100foldstudio_theme_support() {
 
 	// Add post thumbnail support: http://codex.wordpress.org/Post_Thumbnails
 	add_theme_support( 'post-thumbnails' );
+    
+    // Add Custom Thumbnail Sizes
+    if ( function_exists( 'add_image_size' ) ) {
+        add_image_size( 'header-image', 2000, 800, true ); // 2.5:1 Ratio
+        add_image_size( 'bar-image', 1200, 438, true ); // 2.75:1 Ratio
+    }
+    
+    // Add Custom Thumbnail Sizes to "Add Media" Modal
+    add_filter('image_size_names_choose', 'custom_image_sizes_choose');
+    function custom_image_sizes_choose($sizes) {
+        $custom_sizes = array(
+            "header-image"  => __( "Header Image (2.5:1)" ),
+            "bar-image"     => __( "Bar Image (2.75:1)" ),
+        );
+        return array_merge($sizes, $custom_sizes);
+    }
+    
+    add_filter('get_image_tag_class','add_image_class', 10, 4);
+    function add_image_class($class, $id, $align, $size){
+        $class .= ' ' . $size;
+        return $class;
+    }
 
 	// RSS thingy
 	add_theme_support( 'automatic-feed-links' );
-
-	// Add post formarts support: http://codex.wordpress.org/Post_Formats
-	add_theme_support( 'post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat') );
 
 }
 

@@ -161,6 +161,8 @@ if ( ! class_exists( '_100foldstudio_img_rebuilder' ) ) :
 	        $src        = (string) $x->attributes()->src;
 	        $classes    = (string) $x->attributes()->class;
 	        $class_segs = explode(' ', $classes);
+              
+              echo $class_segs;
 
 	        // All images have a source
 	        $img = '<img src="' . $src . '"';
@@ -169,21 +171,17 @@ if ( ! class_exists( '_100foldstudio_img_rebuilder' ) ) :
 	        if ( ! empty( $alt ) ) {
 	          $img .= ' alt="' . $alt . '"';
 	        }
-
-	        // Only alignment classes are allowed
-	        $allowed_classes = array(
-	          'alignleft',
-	          'alignright',
-	          'alignnone',
-	          'aligncenter',
-	        );
-
-	        if ( in_array( $class_segs[0], $allowed_classes ) ) {
-	          $img .= ' class="' . $class_segs[0] . '"';
-	        }
-
-	        // Finish up the img tag
-	        $img .= ' />';
+            
+            // Filter Through Class Segments & Find Alignment Classes and Size Classes
+            foreach ($class_segs as $class_seg) {
+                if ( substr( $class_seg, 0, 5 ) === "align" || substr( $class_seg, 0, 4 ) === "size" ) {
+                    $new_classes[] = $class_seg;
+                }
+            }
+            
+            // Add Rebuilt Classes and Close The Tag
+            $new_classes = count( $new_classes ) ? implode( $new_classes, ' ' ) : ''; 
+            $img .= ' class="' . $new_classes . '" />';
 
 	        return $img;
 	      }
