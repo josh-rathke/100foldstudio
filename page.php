@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-<?php the_post_thumbnail('header-image', array( 'class' => 'header-image' )); ?>
+<?php the_post_thumbnail('header-image', array( 'class' => 'page-header-image' )); ?>
 
 <div class="row">
 	<div class="medium-10 medium-centered columns" role="main">
