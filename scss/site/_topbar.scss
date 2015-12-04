@@ -58,6 +58,7 @@
                       -webkit-transform: scaleX(1);
                       transform: scaleX(1);
                     }
+                    
                 }
 
                 &.active:not(.has-form) a:not(.button),
@@ -83,11 +84,21 @@
                 }
 
                 .sub-menu {
-                    background: white;
+                    background: #EEE;
+                    left: -20% !important;
+                    min-width: 140% !important;
+                    padding-bottom: 10px;
+                    z-index: -1;
 
                     a {
+                        font-family:'Century Gothic W01' !important;
                         font-size: 12px;
                         line-height: 2rem !important;
+                    }
+                    
+                    li {
+                        padding: 4px 0px 0px 0px;
+                        text-align: center;
                     }
                 }
             }
