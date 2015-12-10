@@ -48,7 +48,7 @@ global $_100foldstudio_options;
                             <h6><?php the_title(); ?></h6>
                             <div class="project-location"><?php echo rwmb_meta('100foldstudio_project_location'); ?></div>
                             <div class="ajax-load-bar"></div>
-                            <p>A super catchy phrase that draws people into the project.</p>
+                            <p><?php echo rwmb_meta( '100foldstudio_project_catch_phrase' ); ?></p>
                             <?php echo get_the_post_thumbnail($post->ID, 'post-thumbnail', 'class=project-preview' ); ?>
                     
                             

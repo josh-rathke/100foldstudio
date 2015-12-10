@@ -27,5 +27,12 @@ $meta_boxes[] = array(
 			'type' => 'text',
             'desc' => 'Enter the two-letter ISO country code of the country that the project resides in. References for country codes can be found here: https://countrycode.org/'
 		),
+        
+        array(
+			'name' => __( 'Project Catch Phrase', '100foldstudio' ),
+			'id'   => "{$prefix}project_catch_phrase",
+			'type' => 'textarea',
+            'desc' => 'Enter the projects catch phrase here.'
+		),
 	),
 ); ?>
