@@ -51,7 +51,7 @@ class WordPress_Radio_Taxonomy {
 	static $taxonomy_metabox_id = 'project_classificationdiv';
 	static $post_type= 'project';
     
-	public function load(){
+	public static function load(){
 		//Remove old taxonomy meta box  
 		add_action( 'admin_menu', array(__CLASS__,'remove_meta_box'));  
 		//Add new taxonomy meta box  
@@ -129,7 +129,7 @@ class WordPress_Radio_Taxonomy {
 		</div>
         <?php  
     }
-	 public function admin_script(){  
+	 public static function admin_script(){  
 		wp_register_script( 'radiotax', get_template_directory_uri() . '/js/radiotax.js', array('jquery'), null, true );
 		wp_localize_script( 'radiotax', 'radio_tax', array('slug'=>self::$taxonomy));
 		wp_enqueue_script( 'radiotax' );  

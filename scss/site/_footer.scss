@@ -19,6 +19,28 @@
         text-transform: uppercase;
     }
     
+    .follow-button {
+        border: 1px solid white;
+        float: right;
+        font-size: 12px;
+        letter-spacing: normal;
+        margin-top: 3px;
+        padding: 1px 10px;
+        text-transform: lowercase;
+        
+        a {
+            color: white;
+        }
+    }
+    
+    .tweet {
+        background: #E9E9E9;
+        color: #444444;
+        font-size: 12px;
+        margin-bottom: 1px;
+        padding: 18px;
+    }
+    
     // Gravity Forms Hacks for Contact Form
     .gform_wrapper .top_label .gfield_label {
         display: none;

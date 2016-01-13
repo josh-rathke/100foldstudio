@@ -37,12 +37,14 @@ $tweets = $connection->get("statuses/user_timeline", array("count" => 3, "exclud
 	   <?php do_action( '_100foldstudio_before_footer' ); ?>
 	   
         <div class="columns medium-4">
-            <h5>Latest News</h5>
+            <h5>Twitter<div class="follow-button"><a href="https://twitter.com/100foldstudio">Follow</a></div></h5>
             
             <?php
-            foreach($tweets as $tweet) {
-                echo $tweet->text;
-            }
+            foreach($tweets as $tweet) { ?>
+                <div class="tweet">
+                    <?php echo $tweet->text; ?>
+                </div>
+            <?php }
             
             ?>
             

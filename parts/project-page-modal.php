@@ -8,9 +8,26 @@
         <div class="project-modal-header" style="background: url(<?php echo $project_image; ?>) no-repeat center center"></div>
   
         <div class="row">
-            <div class="columns medium-10 medium-centered">
+            <div class="columns medium-12 medium-centered">
                 <h2><?php the_title(); ?></h2>
-                <?php the_content(); ?>
+                <?php echo rwmb_meta('100foldstudio_project_location'); ?>
+                
+                <div class="row">
+                    <div class="columns medium-6">
+                        <?php the_content(); ?>
+                    </div>
+                    <div class="columns medium-6">
+                        <img src="http://placehold.it/800x600">
+                        <div class="row">
+                            <div class="columns medium-6">
+                                <img src="http://placehold.it/400x300">
+                            </div>
+                            <div class="columns medium-6">
+                                <img src="http://placehold.it/400x300">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

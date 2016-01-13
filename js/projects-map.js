@@ -78,7 +78,7 @@ function initialize() {
     var script = document.createElement('script');
     var url = ['https://www.googleapis.com/fusiontables/v1/query?'];
     url.push('sql=');
-    var query = 'SELECT name, kml_4326 FROM ' +
+    var query = 'SELECT name, kml_4326, iso_a2 FROM ' +
         '1foc3xO9DyfSIF6ofvN0kp2bxSfSeKog5FbdWdQ';
     var encodedQuery = encodeURIComponent(query);
     url.push(encodedQuery);
@@ -104,14 +104,19 @@ function drawMap(data) {
                 newCoordinates = constructNewCoordinates(rows[i][1]['geometry']);
             }
             var randomnumber = Math.floor(Math.random() * 4);
-            var country = new google.maps.Polygon({
-                paths: newCoordinates,
-                strokeColor: "#FFFFFF",
-                strokeOpacity: 1,
-                strokeWeight: 1,
-                fillColor: "#CCCCCC",
-                fillOpacity: 1,
-            });
+            
+            console.log(rows[i][2]);
+            
+            if (rows[i][2] == "AF") {
+                var country = new google.maps.Polygon({
+                    paths: newCoordinates,
+                    strokeColor: "#FFFFFF",
+                    strokeOpacity: 1,
+                    strokeWeight: 1,
+                    fillColor: "#CCCCCC",
+                    fillOpacity: 1,
+                });
+            }
             google.maps.event.addListener(country, 'mouseover', function () {
                 this.setOptions({
                     fillColor: "#77CCD6",

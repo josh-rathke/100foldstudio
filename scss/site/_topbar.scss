@@ -1,19 +1,23 @@
 .top-bar-container {
+    border-bottom: 2px solid #DDD;
     position: fixed;
     top: 0px;
     z-index: 9999;
     
     .top-bar {
-        height: 70px;
+        height: 58px;
         max-width: 100%;
         @include transition(.5s);
 
         .title-area {
-           display: none;
+            
+            img {
+                height: 58px;
+                padding: 22px;
+            }
         }
         
         ul.top-bar-menu {
-            background: transparent;
             position: absolute;
             right: 0px;
             text-transform: uppercase;
@@ -27,14 +31,15 @@
             }
 
             > li {
-                height: 70px;
+                height: 100%;
 
                 > a {
                     font-family:'Century Gothic W01' !important;
                     font-weight: normal;
-                    line-height: 70px !important;
+                    line-height: 58px !important;
                     position: relative;
                     font-size: 14px;
+                    letter-spacing: 2px;
                     text-transform: uppercase;
                     text-decoration: none;
 
@@ -43,7 +48,7 @@
                       position: absolute;
                       width: 70%;
                       height: 3px;
-                      bottom: 16px;
+                      bottom: 10px;
                       left: 15%;
                       background-color: #DDD;
                       visibility: hidden;
@@ -61,22 +66,16 @@
                     
                 }
 
-                &.active:not(.has-form) a:not(.button),
-                &.active:not(.has-form) a:hover:not(.button){
-                    background: transparent;
-                }
-
-                &.has-dropdown>a:after {
-                    border-color: rgba(255,255,255,1) transparent transparent transparent;
-                    top: 35px !important;
+                &.has-dropdown > a {
+                    padding-right: 0.9365rem !important;
+                
+                    &:after {
+                        border-top-style: none;
+                    }
                 }
 
                 &.has-dropdown:hover {
                     background: white;
-
-                    a {
-                        color: #666 !important;
-                    }
 
                     >a:after {
                         border-color: rgba(0,0,0,0.6) transparent transparent transparent
@@ -87,7 +86,6 @@
                     background: #EEE;
                     left: -20% !important;
                     min-width: 140% !important;
-                    padding-bottom: 10px;
                     z-index: -1;
 
                     a {
@@ -97,7 +95,6 @@
                     }
                     
                     li {
-                        padding: 4px 0px 0px 0px;
                         text-align: center;
                     }
                 }

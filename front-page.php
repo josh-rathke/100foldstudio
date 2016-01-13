@@ -67,17 +67,14 @@ admodum reprehendunt eu.</p>
 </div>
 
 <div class="row project-description">
-    <div class="columns medium-8 medium-centered">
+    <div class="columns medium-8">
         <h2>Our Projects</h2>
         <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed
 ultricies laoreet nunc, vitae porta turpis. Nullam felis sem, tincidunt in fringilla a, vulputate nec felis.</p>
     </div>
     
-    <div class="columns medium-4 medium-offset-2">
+    <div class="columns medium-4">
         <a href="<?php echo get_site_url(); ?>/projects/" class="button full-width-button">Learn More</a>
-    </div>
-    
-    <div class="columns medium-4 end">
         <a href="#_" class="button inverted full-width-button">Donate</a>
     </div>
 </div>

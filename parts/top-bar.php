@@ -11,9 +11,7 @@
 <div class="top-bar-container contain-to-grid show-for-medium-up">
     <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
-            <li class="name">
-                <h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-            </li>
+            <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/assets/img/100_fold_studio_gray_on_white.png" />
         </ul>
         <section class="top-bar-section">
             <?php _100foldstudio_top_bar(); ?>
