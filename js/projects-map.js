@@ -113,7 +113,7 @@ function drawMap(data) {
                     strokeColor: "#FFFFFF",
                     strokeOpacity: 1,
                     strokeWeight: 1,
-                    fillColor: "#CCCCCC",
+                    fillColor: "#999999",
                     fillOpacity: 1,
                 });
             }
@@ -125,7 +125,7 @@ function drawMap(data) {
             });
             google.maps.event.addListener(country, 'mouseout', function () {
                 this.setOptions({
-                    fillColor: "#CCCCCC"
+                    fillColor: "#999999"
                 });
             });
 

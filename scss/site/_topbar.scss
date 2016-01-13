@@ -84,8 +84,6 @@
 
                 .sub-menu {
                     background: #EEE;
-                    left: -20% !important;
-                    min-width: 140% !important;
                     z-index: -1;
 
                     a {
@@ -96,6 +94,15 @@
                     
                     li {
                         text-align: center;
+                    }
+                }
+                
+                // Force Last Child Sub-Menu to be Justified on the Right of the Screen
+                &:last-child {
+                    
+                    .sub-menu {
+                        right :0px;
+                        left: auto !important;
                     }
                 }
             }
