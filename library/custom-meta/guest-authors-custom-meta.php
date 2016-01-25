@@ -6,7 +6,7 @@
  */
 
 $meta_boxes[] = array(
-	'title'  => __( 'Additional Project Information', '100foldstudio' ),
+	'title'  => __( '100 Fold Studio Information', '100foldstudio' ),
     'post_types' => array( 'guest-author' ),
     'context'    => 'side',
     'priority'   => 'high',
@@ -14,14 +14,35 @@ $meta_boxes[] = array(
 	'fields' => array(
 		
         array(
-				'name'    => __( 'Radio', '100foldstudio' ),
+				'name'    => __( 'Position & Title', '100foldstudio' ),
 				'id'      => "{$prefix}guest_author_status",
-				'type'    => 'radio',
-				'options' => array(
-					'founder'      => __( 'Founder', '100foldstudio' ),
-					'board-member' => __( 'Board Member', '100foldstudio' ),
-                    // Staff, Intern,
-				),
+				'type'    => 'text',
 			),
+        array(
+				'name'    => __( 'Hometown', '100foldstudio' ),
+				'id'      => "{$prefix}guest_author_status",
+				'type'    => 'text',
+			),
+        array(
+				'name'    => __( 'Education', '100foldstudio' ),
+				'id'      => "{$prefix}guest_author_status",
+				'type'    => 'text',
+			),
+        array(
+				'name'    => __( 'Registrations', '100foldstudio' ),
+				'id'      => "{$prefix}guest_author_status",
+				'type'    => 'text',
+			),
+        array(
+				'name'    => __( 'Certifications', '100foldstudio' ),
+				'id'      => "{$prefix}guest_author_status",
+				'type'    => 'text',
+			),
+        array(
+				'name'    => __( 'Associations', '100foldstudio' ),
+				'id'      => "{$prefix}guest_author_status",
+				'type'    => 'text',
+			),
+        
 	),
 ); ?>

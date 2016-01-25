@@ -64,7 +64,7 @@ class WordPress_Radio_Taxonomy {
 	public static function remove_meta_box(){  
    		remove_meta_box(static::$taxonomy_metabox_id, static::$post_type, 'normal');  
 	} 
-	public function add_meta_box() {  
+	public static function add_meta_box() {  
 		add_meta_box( 'project_classification', 'Classification',array(__CLASS__,'metabox'), static::$post_type ,'side','core');  
 	}  
         
