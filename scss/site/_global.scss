@@ -123,14 +123,14 @@ blockquote {
 }
 
 .button-alt {
-    border: 1px solid #7E8083;
-    color: #7E8083;
+    border: 1px solid #F19D20;
+    color: #F19D20;
     font-family:"Century Gothic W01";
     padding: 10px 16px;
     @include transition(.35s);
     
     &:hover {
-        background: #7E8083;
+        background: #F19D20;
         color: white;
     }
 }
