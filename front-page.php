@@ -17,7 +17,7 @@ get_header(); ?>
 
 <div class="row front-page">
 
-    <div class="columns medium-12 opening-statement">
+    <div class="columns medium-12 opening-statement" id="about">
         <h2><?php the_title(); ?></h2>
         <?php the_content(); ?>
     </div>
@@ -73,7 +73,7 @@ admodum reprehendunt eu.</p>
 ultricies laoreet nunc, vitae porta turpis. Nullam felis sem, tincidunt in fringilla a, vulputate nec felis.</p>
     </div>
     
-    <div class="columns medium-4">
+    <div class="columns medium-4" style="margin-top: 80px;">
         <a href="<?php echo get_site_url(); ?>/projects/" class="button full-width-button">Learn More</a>
         <a href="#_" class="button inverted full-width-button">Donate</a>
     </div>

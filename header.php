@@ -33,15 +33,20 @@
             
             <div id="heroHeader" class="hero-description">
                 <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/100FoldLogo-white.png" />
-                <p>We train, equip, and send architects to serve organizations reaching the unreached.</p>
-                <a href="#_" class="hero-primary-link">Learn More</a>
+                <p><?php echo rwmb_meta( '100foldstudio_video_header_tagline' ); ?></p>
+                <a href="<?php echo rwmb_meta( '100foldstudio_video_header_link_destination' ); ?>" class="hero-primary-link">Learn More</a>
             </div>
             
             <div class="full-screen-video">
                 <video autoplay loop muted>
-                  <source src="<?php echo get_bloginfo('template_url') ?>/assets/video/soccer.mp4" type="video/mp4">
-                  <source src="<?php echo get_bloginfo('template_url') ?>/assets/video/soccer.webm" type="video/webm">
-                Your browser does not support the video tag.
+                    
+                    <?php // Get Video File URLS 
+                    $mp4_file = reset(rwmb_meta( '100foldstudio_video_header_mp4_file', 'type=file')); 
+                    $webm_file = reset(rwmb_meta( '100foldstudio_video_header_webm_file', 'type=file')); ?>
+
+                    <source src="<?php echo $mp4_file['url']; ?>" type="video/mp4">
+                    <source src="<?php echo $webm_file['url']; ?>" type="video/webm">
+                        Your browser does not support the video tag.
                 </video>
             </div>
             
