@@ -20,7 +20,7 @@ if ( ! function_exists( '_100foldstudio_scripts' ) ) :
 	wp_deregister_script( 'jquery' );
 
 	// Modernizr is used for polyfills and feature detection. Must be placed in header. (Not required).
-	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.3', false );
+	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/our-people-modernizr.js', array(), '2.8.3', false );
 
 	// Fastclick removes the 300ms delay on click events in mobile environments. Must be placed in header. (Not required).
 	wp_register_script( 'fastclick', get_template_directory_uri() . '/js/vendor/fastclick.js', array(), '1.0.0', false );
