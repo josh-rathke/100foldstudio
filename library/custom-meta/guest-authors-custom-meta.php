@@ -9,7 +9,7 @@ $meta_boxes[] = array(
 	'title'  => __( '100 Fold Studio Information', '100foldstudio' ),
     'post_types' => array( 'guest-author' ),
     'context'    => 'normal',
-    'priority'   => 'high',
+    'priority'   => 'low',
     'autosave'   => true,
 	'fields' => array(
 		
