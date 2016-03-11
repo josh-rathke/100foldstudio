@@ -162,7 +162,6 @@ $.fn.imagesLoaded = function( callback ) {
 };
 
 var Grid = (function() {
-    print_r('working');
 
 		// list of items
 	var $grid = $( '#og-grid' ),

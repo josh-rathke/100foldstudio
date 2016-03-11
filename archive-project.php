@@ -7,11 +7,47 @@ global $_100foldstudio_options;
 ?>
 
 
+<script type="text/javascript" src="https://maps.google.com/maps/api/js"></script>
+<script type="text/javascript" src="<?php echo get_bloginfo( 'template_directory' ); ?>/js/infobox.js"></script>
 
-<script type="text/javascript"
-    src="https://maps.google.com/maps/api/js?sensor=false"></script>
+<?php
 
-<script type="text/javascript" src="<?php echo get_bloginfo( 'template_directory' ); ?>/js/projects-map.js"></script>
+// Register the script
+wp_register_script( 'projects-map', get_bloginfo( 'template_directory' ) . '/js/projects-map.js' );
+
+// Initialize the $map_project_data array
+$map_project_data = array();
+
+$projects = get_posts('post_type=project&posts_per_page=-1');
+foreach ($projects as $project) {
+    echo $project->ID . ', ';
+    $country = rwmb_meta('100foldstudio_project_country_code', '', $project->ID);
+    
+    if (!array_key_exists($country, $map_project_data)) {
+        $map_project_data[$country] = array (
+            'project_count' => 1,
+            'projects' => array(
+                $project->ID => array (
+                    'project_title'     => $project->post_title,
+                    'project_permalink' => get_permalink($project->ID),
+                )                
+            ),
+        );
+    } else {
+        $map_project_data[$country]['project_count']++;
+        $map_project_data[$country]['projects'][$project->ID] = array (
+            'project_title'     => $project->post_title,
+            'project_permalink' => get_permalink($project->ID),
+        ); 
+    }
+}
+
+wp_localize_script( 'projects-map', 'map_project_data', $map_project_data );
+
+// Enqueued script with localized data.
+wp_enqueue_script( 'projects-map' ); ?>
+
+
 <div id="projects-map"></div>
 
 <div class="row">

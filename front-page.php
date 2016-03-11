@@ -24,35 +24,11 @@ get_header(); ?>
     
     <div class="columns medium-12 whats-new-container">
         <h2>What's New</h2>
-        <ul class="medium-block-grid-3">
-            <li>
-                <img src="http://placehold.it/350x150" />
-                <div class="whats-next-content">
-                    <h6>Story Title</h6>
-                    <p>dolor sit amet, ut pri falli dicit, mei solum
-admodum reprehendunt eu.</p>
-                    <a href="_#" class="button-alt">Read Full Story</a>
-                </div>
-            </li>
-            <li>
-                <img src="http://placehold.it/350x150" />
-                <div class="whats-next-content">
-                    <h6>Story Title</h6>
-                    <p>dolor sit amet, ut pri falli dicit, mei solum
-admodum reprehendunt eu.</p>
-                    <a href="_#" class="button-alt">Read Full Story</a>
-                </div>
-            </li>
-            <li>
-                <img src="http://placehold.it/350x150" />
-                <div class="whats-next-content">
-                    <h6>Story Title</h6>
-                    <p>dolor sit amet, ut pri falli dicit, mei solum
-admodum reprehendunt eu.</p>
-                    <a href="_#" class="button-alt">Read Full Story</a>
-                </div>
-            </li>
-        </ul>
+        <?php if ( is_active_sidebar( 'home-page-middle' ) ) : ?>
+            <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+                <?php dynamic_sidebar( 'home-page-middle' ); ?>
+            </div><!-- #primary-sidebar -->
+        <?php endif; ?>
     </div>
 </div>
 

@@ -20,30 +20,26 @@ get_header(); ?>
     </div>
     
     
-    <ul class="small-block-grid-2">
+    <ul id="og-grid" class="og-grid">
+        
         <?php // Retrieve All Guest Authors
-        print_r(get_post_types());
         $guest_authors = get_posts('post_type=guest-author&numberposts=-1');
         
-        foreach ($guest_authors as $guest_author) : ?>
-
-        <?php endforeach;
-
-        print_r($guest_authors);
+        foreach ($guest_authors as $guest_author) :
+            // Build Co-Author Object
+            $coauthor_object = get_coauthors($guest_author->ID);
+            
+            // Build Variables for Author Profile
+            $display_name = $guest_author->post_title;
+            $author_bio = $coauthor_object[0]->description;
+            $full_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($guest_author->ID), 'full' )[0];
+            $thumb_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($guest_author->ID), 'medium' )[0];
         
-        print_r(get_coauthors('312'));
+            echo "<li><a href='#_' data-largesrc='{$full_image_url}' data-title='{$display_name}' data-description='{$author_bio}'><img src='{$thumb_image_url}' /></a></li>";
+        endforeach;
         ?>
     </ul>
-    
-    
-    <ul id="og-grid" class="og-grid">
-        <li>
-            <a href="http://cargocollective.com/jaimemartinez/" data-largesrc="images/2.jpg" data-title="This is a test" data-description="Komatsuna prairie turnip wattle seed artichoke mustard horseradish taro rutabaga ricebean carrot black-eyed pea turnip greens beetroot yarrow watercress kombu.">
-                <img src="images/thumbs/2.jpg" alt="img02"/>
-            </a>
-        </li>
-					
-    </ul>
+        
     <script src="<?php echo get_bloginfo('template_directory'); ?>/js/our-people-grid.js"></script>
     <script>
 			$(function() {

@@ -46,6 +46,14 @@ require_once( 'library/theme-support.php' );
 require_once( 'library/custom-header.php' );
 
 
+/** Add Widget Scripts
+ *  These scripts add all of the necessary scripts to
+ *  run widgets on the site.
+ */
+
+// Widgetize Areas
+require_once( 'library/widgets/widgetize-areas.php' );
+
 
 
 /** Add TGM Plugin Activation Class **/
