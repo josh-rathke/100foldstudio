@@ -41,27 +41,6 @@
                     letter-spacing: 2px;
                     text-transform: uppercase;
                     text-decoration: none;
-
-                    &:before {
-                      content: "";
-                      position: absolute;
-                      width: 70%;
-                      height: 3px;
-                      bottom: 10px;
-                      left: 15%;
-                      background-color: #DDD;
-                      visibility: hidden;
-                      -webkit-transform: scaleX(0);
-                      transform: scaleX(0);
-                      -webkit-transition: all 0.3s ease-in-out 0s;
-                      transition: all 0.3s ease-in-out 0s;
-                    }
-
-                    &:hover:before {
-                      visibility: visible;
-                      -webkit-transform: scaleX(1);
-                      transform: scaleX(1);
-                    }
                     
                 }
 
@@ -82,7 +61,9 @@
                 }
 
                 .sub-menu {
-                    background: #EEE;
+                    left: -50%;
+                    right: -50%;
+                    background: #FFFFFF;
                     z-index: -1;
 
                     a {

@@ -11,7 +11,7 @@
 register_nav_menus(array(
 	'top-bar'             => 'Top Bar',
 	'mobile-off-canvas'   => 'Mobile',
-    'join-us'             => 'Join Us',
+    'join-us-menu'        => 'Join Us',
     'copyright-bar'       => 'Copyright Bar',
 ));
 
@@ -41,17 +41,11 @@ if ( ! function_exists( '_100foldstudio_top_bar' ) ) {
 
 
 /**
- *  Add Logo to Top Bar
+ *  Add Custom Menu Items
+ *  These functions add custom menu items to specific menus.
  */
 add_filter('wp_nav_menu_items','add_custom_menu_items', 10, 2);
 function add_custom_menu_items( $nav, $args ) {
-    
-    // Logo to Top Bar
-    if( $args->theme_location == 'top-bar' ) {
-        //$newmenuitem = '<img src="' . get_bloginfo("template_url") . '/assets/img/logo_on_white_only.png" />';
-        //$nav = $newmenuitem.$nav;
-        return $nav;
-    }
     
     // Add Copyright to Copyright Bar
     if( $args->theme_location == 'copyright-bar' ) {
@@ -94,13 +88,13 @@ if ( ! function_exists( '_100foldstudio_join_us' ) ) {
 	        'container' => false,                           // Remove nav container
 	        'container_class' => '',                        // Class of container
 	        'menu' => '',                                   // Menu name
-	        'menu_class' => 'join-us-list',                 // Adding custom nav class
-	        'theme_location' => 'join-us',                  // Where it's located in the theme
+	        'menu_class' => 'join-us-list',          // Adding custom nav class
+	        'theme_location' => 'join-us-menu',            // Where it's located in the theme
 	        'before' => '',                                 // Before each link <a>
 	        'after' => '',                                  // After each link </a>
 	        'link_before' => '',                            // Before each link text
 	        'link_after' => '',                             // After each link text
-	        'depth' => 1,                                   // Limit the depth of the nav
+	        'depth' => 1,  
 	    ));
 	}
 }
@@ -115,7 +109,7 @@ if ( ! function_exists( '_100foldstudio_copyright_bar' ) ) {
 	        'container' => false,                           // Remove nav container
 	        'container_class' => '',                        // Class of container
 	        'menu' => '',                                   // Menu name
-	        'menu_class' => 'copyright0-bar-list',          // Adding custom nav class
+	        'menu_class' => 'copyright-bar-list',          // Adding custom nav class
 	        'theme_location' => 'copyright-bar',            // Where it's located in the theme
 	        'before' => '',                                 // Before each link <a>
 	        'after' => '',                                  // After each link </a>

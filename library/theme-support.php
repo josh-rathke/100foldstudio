@@ -24,6 +24,7 @@ function _100foldstudio_theme_support() {
     // Add Custom Thumbnail Sizes
     if ( function_exists( 'add_image_size' ) ) {
         add_image_size( 'header-image', 2000, 800, true ); // 2.5:1 Ratio
+        add_image_size( 'header-thumbnail', 500, 200, true); // 2.5:1 Ratio
         add_image_size( 'bar-image', 1200, 438, true ); // 2.75:1 Ratio
     }
     

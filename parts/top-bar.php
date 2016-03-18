@@ -12,7 +12,7 @@
     <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
             <a href="<?php echo get_bloginfo('home'); ?>">
-                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/assets/img/100_fold_studio_gray_on_white.png" />
+                <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/assets/img/gray_on_white_linear.png" />
             </a>
         </ul>
         <section class="top-bar-section">

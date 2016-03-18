@@ -31,7 +31,6 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 $connection = new TwitterOAuth($tw_consumer_key, $tw_consumer_secret, $tw_access_token, $tw_access_token_secret);
 $tweets = $connection->get("statuses/user_timeline", array("count" => 3, "exclude_replies" => true)); ?>
 
-
 <footer class="footer">
     <div class="row">
 	   <?php do_action( '_100foldstudio_before_footer' ); ?>

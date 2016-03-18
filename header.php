@@ -32,7 +32,7 @@
         <div class="hero-header clearfix">
             
             <div id="heroHeader" class="hero-description">
-                <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/100FoldLogo-white.png" />
+                <img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/100foldstudio_logo_thick.png" />
                 <p><?php echo rwmb_meta( '100foldstudio_video_header_tagline' ); ?></p>
                 <a href="<?php echo rwmb_meta( '100foldstudio_video_header_link_destination' ); ?>" class="hero-primary-link">Learn More</a>
             </div>

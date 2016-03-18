@@ -16,7 +16,7 @@ $meta_boxes[] = array(
         array(
 			'name' => __( 'Header Tagline', '100foldstudio' ),
 			'id'   => "{$prefix}video_header_tagline",
-			'type' => 'textarea',
+			'type' => 'wysiwyg',
             'desc' => 'This will be the tagline that is superimposed over the video.',
 		),
         

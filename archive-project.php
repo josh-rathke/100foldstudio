@@ -67,7 +67,7 @@ wp_enqueue_script( 'projects-map' ); ?>
             echo '<h5>' . $term->name . '</h5>';
             
             // Open A Block Grid Element
-            echo '<ul class="medium-block-grid-4 project-class-container">';
+            echo '<ul class="medium-block-grid-3 project-class-container">';
 
             // The Query
             $the_query = new WP_Query( "project_classification={$term->name}" );
