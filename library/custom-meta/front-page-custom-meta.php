@@ -42,6 +42,15 @@ $meta_boxes[] = array(
             'type' => 'file_advanced',
             'max_file_uploades' => 1,
         ),
+        
+        // MOV File Upload
+        array(
+            'name' => __( 'MOV File Upload', 'meta-box' ),
+            'id'   => "{$prefix}video_header_mov_file",
+            'type' => 'file_advanced',
+            'max_file_uploades' => 1,
+        ),
+        
 	),
     'only_on'    => array(
 		// 'id'       => array( 1, 2 ),
@@ -49,6 +58,91 @@ $meta_boxes[] = array(
         'template' => array( 'front-page.php' ),
 		// 'parent'   => array( 10 )
 	),
+);
+
+$meta_boxes[] = array(
+	'title'  => __( "What's New Section", '100foldstudio' ),
+    'post_types' => array( 'page' ),
+    'context'    => 'normal',
+    'priority'   => 'high',
+    'autosave'   => true,
+	'fields' => array(
+		
+        array(
+			'name' => __( 'Section Title', '100foldstudio' ),
+			'id'   => "{$prefix}wn_section_title",
+			'type' => 'text',
+            'desc' => "Enter the title for the what's new section",
+		),
+        
+	),
+    'only_on'    => array(
+		// 'id'       => array( 1, 2 ),
+		// 'slug'  => array( '' ),
+        'template' => array( 'front-page.php' ),
+		// 'parent'   => array( 10 )
+	),
+    
+);
+
+$meta_boxes[] = array(
+	'title'  => __( "Our Projects Section", '100foldstudio' ),
+    'post_types' => array( 'page' ),
+    'context'    => 'normal',
+    'priority'   => 'high',
+    'autosave'   => true,
+	'fields' => array(
+		
+        array(
+			'name' => __( 'Section Title', '100foldstudio' ),
+			'id'   => "{$prefix}op_section_title",
+			'type' => 'text',
+            'desc' => "Enter the title for the our projects section",
+		),
+        
+        array(
+			'name' => __( 'Section Description', '100foldstudio' ),
+			'id'   => "{$prefix}op_section_description",
+			'type' => 'textarea',
+            'desc' => "Enter the description for the our projects section",
+		),
+        
+        array(
+			'name' => __( 'Top Link Text', '100foldstudio' ),
+			'id'   => "{$prefix}op_section_tl_text",
+			'type' => 'text',
+            'desc' => "Enter the text for the top link.",
+		),
+        
+        array(
+			'name' => __( 'Top Link URL', '100foldstudio' ),
+			'id'   => "{$prefix}op_section_tl_url",
+			'type' => 'text',
+            'desc' => "Enter the url for the top link.",
+		),
+        
+        array(
+			'name' => __( 'Bottom Link Text', '100foldstudio' ),
+			'id'   => "{$prefix}op_section_bl_text",
+			'type' => 'text',
+            'desc' => "Enter the text for the bottom link.",
+		),
+        
+        array(
+			'name' => __( 'Bottom Link URL', '100foldstudio' ),
+			'id'   => "{$prefix}op_section_bl_url",
+			'type' => 'text',
+            'desc' => "Enter the url for the bottom link.",
+		),
+        
+	),
+    'only_on'    => array(
+		// 'id'       => array( 1, 2 ),
+		// 'slug'  => array( '' ),
+        'template' => array( 'front-page.php' ),
+		// 'parent'   => array( 10 )
+	),
+    
 );
 
 $meta_boxes[] = array(

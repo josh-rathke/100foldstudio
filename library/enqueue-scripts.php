@@ -33,6 +33,8 @@ if ( ! function_exists( '_100foldstudio_scripts' ) ) :
 	wp_register_script( 'foundation', get_template_directory_uri() . '/js/foundation.js', array('jquery'), '5.5.2', true );
     
     wp_register_script( 'fittext', get_template_directory_uri() . '/bower_components/FitText.js/jquery.fittext.js', array('jquery'), '1.2.0', false );
+        
+    wp_register_script( 'smoothscroll', get_template_directory_uri() . '/node_modules/jquery-smooth-scroll/jquery.smooth-scroll.js', array('jquery'), '1.7.2', false );
 
 	// Enqueue all registered scripts.
 	wp_enqueue_script( 'modernizr' );
@@ -40,6 +42,7 @@ if ( ! function_exists( '_100foldstudio_scripts' ) ) :
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'foundation' );
     wp_enqueue_script( 'fittext' );
+    wp_enqueue_script( 'smoothscroll' );
         
 
 	}

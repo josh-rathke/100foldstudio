@@ -4,3 +4,5 @@ jQuery(document).foundation({
         animation_speed: 0,
     }
 });
+
+$('a').smoothScroll();

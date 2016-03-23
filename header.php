@@ -23,6 +23,8 @@
 		<link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/icons/apple-touch-icon-precomposed.png">
 		
 		<?php wp_head(); ?>
+        
+        
 	</head>
 	<body <?php body_class(); ?>>
 	<?php do_action( '_100foldstudio_after_body' ); ?>
@@ -42,10 +44,12 @@
                     
                     <?php // Get Video File URLS 
                     $mp4_file = reset(rwmb_meta( '100foldstudio_video_header_mp4_file', 'type=file')); 
-                    $webm_file = reset(rwmb_meta( '100foldstudio_video_header_webm_file', 'type=file')); ?>
+                    $webm_file = reset(rwmb_meta( '100foldstudio_video_header_webm_file', 'type=file')); 
+                    $mov_file = reset(rwmb_meta( '100foldstudio_video_header_mov_file', 'type=file'))?>
 
                     <source src="<?php echo $mp4_file['url']; ?>" type="video/mp4">
                     <source src="<?php echo $webm_file['url']; ?>" type="video/webm">
+                    <source src="<?php echo $mov_file['url']; ?>" type="video/mov">
                         Your browser does not support the video tag.
                 </video>
             </div>

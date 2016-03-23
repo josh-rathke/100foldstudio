@@ -23,7 +23,7 @@ get_header(); ?>
     </div>
     
     <div class="columns medium-12 whats-new-container">
-        <h2>What's New</h2>
+        <h2><?php echo rwmb_meta( '100foldstudio_wn_section_title' ); ?></h2>
         <?php if ( is_active_sidebar( 'home-page-middle' ) ) : ?>
             <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
                 <?php dynamic_sidebar( 'home-page-middle' ); ?>
@@ -44,14 +44,13 @@ get_header(); ?>
 
 <div class="row project-description">
     <div class="columns medium-8">
-        <h2>Our Projects</h2>
-        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed
-ultricies laoreet nunc, vitae porta turpis. Nullam felis sem, tincidunt in fringilla a, vulputate nec felis.</p>
+        <h2><?php echo rwmb_meta( '100foldstudio_op_section_title' ); ?></h2>
+        <p><?php echo rwmb_meta( '100foldstudio_op_section_description' ); ?></p>
     </div>
     
     <div class="columns medium-4" style="margin-top: 80px;">
-        <a href="<?php echo get_site_url(); ?>/projects/" class="button full-width-button">Learn More</a>
-        <a href="#_" class="button inverted full-width-button">Donate</a>
+        <a href="<?php echo rwmb_meta( '100foldstudio_op_section_tl_url' ); ?>" class="button full-width-button"><?php echo rwmb_meta( '100foldstudio_op_section_tl_text' ); ?></a>
+        <a href="<?php echo rwmb_meta( '100foldstudio_op_section_bl_url' ); ?>" class="button inverted full-width-button"><?php echo rwmb_meta( '100foldstudio_op_section_bl_text' ); ?></a>
     </div>
 </div>
     
