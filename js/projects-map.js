@@ -7,7 +7,7 @@ function initialize() {
             "featureType": "landscape",
             "elementType": "all",
             "stylers": [{
-                "color": "#DDDDDD"
+                "color": "#77CCD6"
             }]
         }, {
             "featureType": "administrative",
@@ -114,7 +114,7 @@ function drawStates(data) {
                 strokeColor: "#FFFFFF",
                 strokeOpacity: 1,
                 strokeWeight: 1,
-                fillColor: "#999999",
+                fillColor: "#CCCCCC",
                 fillOpacity: 1,
                 countryName: rows[k][0],
             });
@@ -131,7 +131,7 @@ function drawStates(data) {
 
             google.maps.event.addListener(state, 'mouseout', function () {
                 this.setOptions({
-                    fillColor: "#999999"
+                    fillColor: "#CCCCCC"
                 });
             });
         }
@@ -171,7 +171,7 @@ function drawCountries(data) {
                     strokeColor: "#FFFFFF",
                     strokeOpacity: 1,
                     strokeWeight: 1,
-                    fillColor: "#999999",
+                    fillColor: "#CCCCCC",
                     fillOpacity: 1,
                     countryName: rows[i][0],
                 });
@@ -228,7 +228,7 @@ function drawCountries(data) {
 
                 google.maps.event.addListener(country, 'mouseout', function () {
                     this.setOptions({
-                        fillColor: "#999999"
+                        fillColor: "#CCCCCC"
                     });
                     infoBoxes['ib_' + this.countryName].setVisible(0);
                 });
