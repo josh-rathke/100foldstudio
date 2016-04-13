@@ -129,6 +129,14 @@ blockquote {
     padding: 10px 16px;
     @include transition(.35s);
     
+    &.inverted {
+        background: white;
+        border: 2px solid #F19D20;
+        color: #F19D20;
+        height: 60px;
+        padding: .9rem 2rem 1.0625rem 2rem;
+    }
+    
     &:hover {
         background: white;
         border: 1px solid #F19D20;
@@ -158,4 +166,12 @@ blockquote {
     max-width: 120%;
     margin: 40px 0px;
     position: relative;
+}
+
+.featured-image-container {
+  height: 450px;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
 }

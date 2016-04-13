@@ -13,7 +13,15 @@
 
 get_header(); ?>
 
-<?php the_post_thumbnail('header-image', array( 'class' => 'page-header-image' )); ?>
+
+<?php 
+global $post;
+$featured_image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'header-image');
+
+echo "<div class='featured-image-container' style='background: url({$featured_image_url[0]}) no-repeat center center;'>";
+
+echo '</div>';
+?>
 
 <div class="row">
 	<div class="medium-10 medium-centered columns" role="main">

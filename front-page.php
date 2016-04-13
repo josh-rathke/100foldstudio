@@ -18,18 +18,87 @@ get_header(); ?>
 <div class="row front-page">
 
     <div class="columns medium-12 opening-statement" id="about">
-        <h2><?php the_title(); ?></h2>
-        <?php the_content(); ?>
+        <h1><?php echo rwmb_meta('100foldstudio_opening_statement_title'); ?></h1>
+        <?php echo rwmb_meta('100foldstudio_opening_statement'); ?>
     </div>
     
     <div class="columns medium-12 whats-new-container">
         <h2><?php echo rwmb_meta( '100foldstudio_wn_section_title' ); ?></h2>
-        <?php if ( is_active_sidebar( 'home-page-middle' ) ) : ?>
-            <div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-                <?php dynamic_sidebar( 'home-page-middle' ); ?>
-            </div><!-- #primary-sidebar -->
-        <?php endif; ?>
+        
+        <ul class="medium-block-grid-3">
+            <?php
+            
+            // Get Page ID
+            for ($wn_counter=1; $wn_counter<=3; $wn_counter++) {
+            $page_id = rwmb_meta("100foldstudio_wn_section_{$wn_counter}_page");
+                
+                echo '<li>';
+                
+                //Section Header Image Check
+                if (isset($page_id)) {
+                    if (rwmb_meta("100foldstudio_wn_section_{$wn_counter}_header_img")) {
+                        
+                        // Define Image ID
+                        $img_id = rwmb_meta("100foldstudio_wn_section_{$wn_counter}_header_img");
+                        echo wp_get_attachment_image($img_id, 'header-thumbnail');
+                    } else {
+                        echo get_the_post_thumbnail($page_id, 'header-thumbnail');
+                    }
+                } else {
+                    // Define Image ID
+                    $img_id = rwmb_meta("100foldstudio_wn_section_{$wn_counter}_header_img");
+                    echo wp_get_attachment_image($img_id, 'header-thumbnail');
+                }
+                
+                //Section Title Check
+                if (isset($page_id)) {
+                    if (rwmb_meta("100foldstudio_wn_section_{$wn_counter}_title")) {
+                        echo '<h4>' . rwmb_meta("100foldstudio_wn_section_{$wn_counter}_title") . '</h4>';
+                    } else {
+                        echo '<h4>' . get_the_title($page_id) . '</h4>';
+                    }
+                } else {
+                    echo '<h4>' . rwmb_meta("100foldstudio_wn_section_{$wn_counter}_title") . '</h4>';
+                }
+                
+                //Section Description Check
+                if (isset($page_id)) {
+                    if (rwmb_meta("100foldstudio_wn_section_{$wn_counter}_description")) {
+                        echo rwmb_meta("100foldstudio_wn_section_{$wn_counter}_description");
+                    } else {
+                        echo get_excerpt_by_id($page_id);
+                    }
+                } else {
+                    echo rwmb_meta("100foldstudio_wn_section_{$wn_counter}_description");
+                }
+                
+                //Section Link Check
+                if (isset($page_id)) {
+                    if (rwmb_meta("100foldstudio_wn_section_{$wn_counter}_link_text")) {
+                        $link_text = rwmb_meta("100foldstudio_wn_section_{$wn_counter}_link_text");
+                        $link_url = get_permalink($page_id);
+                        echo '<a href= "' . $link_url . '" class="button button-alt inverted">' . $link_text . '</a>';
+                    } else {
+                        $link_url = get_permalink($page_id);
+                        echo '<a href= "' . $link_url . '" class="button button-alt inverted">Learn More</a>';
+                    }
+                } else {
+                    $link_text = rwmb_meta("100foldstudio_wn_section_{$wn_counter}_link_text");
+                    $link_url = rwmb_meta("100foldstudio_wn_section_{$wn_counter}_link_text");
+                    echo '<a href= "' . $link_url . '" class="button button-alt inverted">' . $link_text . '</a>';
+                }
+                
+                echo '</li>';
+            }
+            ?>
+            </li>
+        </ul>
     </div>
+    
+    <div class="columns medium-12 front-page-content">
+        <?php the_content(); ?>
+    </div>
+
 </div>
 
 <?php // Get Parallax Background Image
